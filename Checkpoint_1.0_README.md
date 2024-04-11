@@ -17,7 +17,7 @@ Based on the current datasets, i come up with some thoughts about how we could u
 
 Challenges and victories:
 
-Challenges: It is hard for multiple people to edit the README file at once on GitHub. It can be challenging to push changes from the terminal if things are not set up the right way.
+Challenges: It is hard for multiple people to edit the README file at once on GitHub. It can be challenging to push changes from the terminal if things are not set up the right way. We spent a lot of time struggling to understand why changes to the README would not save unless they came from Yesh and in the end we figured out if was an issue due to who could collaborate on the document.
 
 Victories: easy to stay organized between checkpoints. It is nice to see different versions of peoples analyses and when they were pushed.
 
