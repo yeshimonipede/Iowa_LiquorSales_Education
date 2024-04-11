@@ -7,6 +7,13 @@ Yesh:
 - I did a lot of initial forecasting exploration. I used the time series data from the data sets of gin sales to forecast sales in dollars, bottles, and volumes of the upcoming 8 quarters using a seasonal naive model. I showed an example of how I would do this for each county so we could inform the decision maker of the counties that are projected to have the largest percent increase in future sales. This information could be helpful when allocating funds to specific areas that may have more gin consumption. I tried to also get an ARIMA model to work as well so that I could compare model performance with the snaive model but am still troubleshooting why I am getting the same point forecast for each upcoming quarter. I also am considering splitting into a training and test data set so that I can assess model performance.
 -I created the final draft outline as well as drafted the introduction
 
+
+Challenges and victories:
+
+Challenges: It is hard for multiple people to edit the README file at once on GitHub. It can be challenging to push changes from the terminal if things are not set up the right way.
+
+Victories: easy to stay organized between checkpoints. It is nice to see different versions of peoples analyses and when they were pushed.
+
 Updates on the major areas:
 
 1. Propose a research topic (Option 1 or Option 2):
