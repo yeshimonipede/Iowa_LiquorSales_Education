@@ -8,8 +8,7 @@ We will use a variety of methods to investigate the relationship, if any, betwee
 
 
 Visualizations:
-We will create plots in R studio and Tableau to explore our project topic, accompnaying with the statistical analysis.
-
+We will create plots in R studio and Tableau to explore our project topic, accompnaying with the statistical analysis.Since we want to explore the educational attainmet level influences on the liquor sales, also based on different liquor categories, how these socio-economic factors influence total sales? We are moving forward to see more patterns by using statistical analysis and forecasting methods.
 Data summary:
 Based on our topic and related organization that we are eager to discuss in our project, we are trying to find tighter connection between all the variables. Has liquor sales influenced by the income in different counties and cities? Is the level of income also related to the level of education and the percentage of ethnicity? How does the type of wine relate to total wine sales? In looking at these datasets, we tend to combine statistical analysis with social factors.
 
