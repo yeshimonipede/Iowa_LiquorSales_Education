@@ -12,8 +12,7 @@ I combining data analysis with future reports to be submitted
 I created a bar chart showing total sales for each county in Iowa and provides valuable insights into the distribution of liquor sales across different geographical areas within the state. visually compare total sales figures between counties, revealing any notable differences in liquor consumption patterns. I also created the top 5 counties in the Iowa bar chart with income levels above bachelor's degree. The graph shows higher levels of economic prosperity compared to others in Iowa. I also created another map that has county total sales and combined previous charts together in a dashboard, and map shows that areas with higher income levels tend to have more liquor sales, higher-income individuals may have greater disposable income, allowing them to spend more on luxury goods and recreational activities such as alcohol consumption. As a result, areas with higher income levels may see higher liquor sales volumes.
 
 Wendi:
-Based on the current datasets, i come up with some thoughts about how we could use the socio and economic factors together to do the analysis, and relating to the real-world conditions. I used the R and Tableau to merge data sets and use statistical methods like the regressions and forecasting to do the tests. 
-
+Based on the current datasets, i come up with some thoughts about how we could use the socio and economic factors together to do the analysis, and relating to the real-world conditions. I used the R and Tableau to merge data sets and use statistical methods like the regressions and forecasting to do the tests, between liquor sales dataset and the acs dataset. Tyring to use the K means clustering to find the best numbers of clusters. 
 
 
 Challenges and victories:
