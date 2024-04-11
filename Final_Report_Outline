@@ -9,6 +9,10 @@ We will use a variety of methods to investigate the relationship, if any, betwee
 
 Visualizations
 
+github repository: create a github repository and adding what analysis we done. We successfully download git, open the account and create repository to record the project workflow. By looking up videos , we get to know more functions of git and statring to upload files, editing the descriptions within the group. However, linking the git and local path that we do the analysis work is a fresh task, including push and pull request, and we are on the way to be more familiarize with the git.
+
+data summary:
+Based on our topic and related organization that we are eager to discuss in our project, we are trying to find tighter connection between all the variables. Has liquor sales influenced by the income in different counties and cities? Is the level of income also related to the level of education and the percentage of ethnicity? How does the type of wine relate to total wine sales? In looking at these datasets, we tend to combine statistical analysis with social factors.
 
 Hypothesis testing:
 -using K-means clustering to compare differences between counties
