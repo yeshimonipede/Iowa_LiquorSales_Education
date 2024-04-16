@@ -7,11 +7,17 @@ This project aims to aid the Director of the Public Health Department of Iowa in
 We will use a variety of methods to investigate the relationship, if any, between liquor sales and education attainment levels in the state of Iowa on a county level basis. Graphics will help highlight how liquor sales and educational attainment levels differ from county to county. This will be valuable information to the director to be immediately and easily aware about the counties that are purchasing the most liquor as well as the distribution of education attainment levels around the state. A regression analysis will help highlighti if there is a statistically significant relationship between education attainment levels and alcohol consuption levels. This will help the director determine if it is of worth to target certain areas based on their educational attainment when allocating advertisement resources. K-means clustering will also help hypothesis testing by investigating if there are statistically significant differences between counties in liquor sales. Finally, forecasting analyses will use gin sales in the last few years to help determine which counties are forecasted to have the largest increase in liquor sales over the next eight quarters. This information will be valuable to the director as they can target these specific counties for prioritized resource allocation.
 
 
+
+Visualizations:
+We will create plots in R studio and Tableau to explore our project topic, accompnaying with the statistical analysis.Since we want to explore the educational attainmet level influences on the liquor sales, also based on different liquor categories, how these socio-economic factors influence total sales? We are moving forward to see more patterns by using statistical analysis and forecasting methods.
+Data summary:
+
 Visualizations
 
 github repository: create a github repository and adding what analysis we done. We successfully download git, open the account and create repository to record the project workflow. By looking up videos , we get to know more functions of git and statring to upload files, editing the descriptions within the group. However, linking the git and local path that we do the analysis work is a fresh task, including push and pull request, and we are on the way to be more familiarize with the git.
 
 data summary:
+
 Based on our topic and related organization that we are eager to discuss in our project, we are trying to find tighter connection between all the variables. Has liquor sales influenced by the income in different counties and cities? Is the level of income also related to the level of education and the percentage of ethnicity? How does the type of wine relate to total wine sales? In looking at these datasets, we tend to combine statistical analysis with social factors.
 
 Hypothesis testing:
@@ -19,11 +25,13 @@ Hypothesis testing:
 
 Regression Analysis
 -to assess if there is a statistically significant relationship between education attainment levels and liquor sales 
+-to find out the correlation between educational attainment levels and income within different counties
 
 Forecasting 
 -Predicting which counties will have the largest increase in gin sales in upcoming quarters to target intervention in those counties
   -snaive model 
   -ARIMA model (still need to get this to work)
+  -K means clustering
 
 Conclusion
 - an informed and well supported assessment about whether or not there is correlation between liquor sales and education attainment levels in Iowa and if so which areas should be prioritized for a targeted advertisement campaign intended to reduce alcohol-related issues in the state of Iowa. Forecasting techniques will also provide a suggestion for which counties should be identified and monitored as "on the rise" counties in terms of predicted future liquor sales. 
