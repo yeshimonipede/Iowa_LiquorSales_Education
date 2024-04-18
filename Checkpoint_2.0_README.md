@@ -16,7 +16,11 @@ Github:
 
 The team is definitely improving on their GitHub knowledge. I (Yesh) am much more confidently pulling and pushing and navigating the GitHub from my local terminal rather than from the 
 webpage version of GitHub. The area that is still difficult for me is the merging between repos. I think our new branch has files from the old checkpoint branch and I do not think this is 
-supposed to be how the Checkpoint Branch 2 is intended to be organized. Hopefully I can learn more about how the merging of the branches works. 
+supposed to be how the Checkpoint Branch 2 is intended to be organized. Hopefully I can learn more about how the merging of the branches works. An issue I have right now is that I can delete 
+these accidental files that were transfered from the first checkpoint from my local repo but I cannot find a way to have them stop showing up from the branch online.
+
+Now that I understand more about the data paths and being able to clone repos, it is really cool that you do not need to set paths specifically but instead you can just import and use data 
+straight from the shared repos.
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
