@@ -60,10 +60,9 @@ We have two main data tables when running our analyses:
 (1) a merged dataset between the Gin liquor sales in the state of Iowa  between 2016-2017 and education levels
 (2) a merged dataset between all liquor sales in Iowa and socioeconomic factors (such as education attainment levels)
 
-
 Hypothesis testing:
 -using K-means clustering to compare differences between counties
-
+By partitioning data points into clusters based on similarity, K-means helps identify meaningful patterns and relationships within datasets. Its straightforward implementation and ability to handle large volumes of data make it a go-to method for exploratory analysis and pattern recognition across various domains.
 ---------------------
 Regression Analysis
 ----------------------
