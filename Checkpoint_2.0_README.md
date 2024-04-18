@@ -14,7 +14,8 @@ Wendi:
      - I find two specific counties and doing the k means clusters to group them. In the k means clustering, i try different methods to confirm the number of clusters and doing the group between variables. Under the k means, by merging colors of different liquor subcategory, it is clearer to target our main question.
 
 Mingdong:
-        - I continued with the tableau graph visualizations. I fixed the cluster plot in order to have a better interpretion of dimension 1 and dimension 2. I also added more interpretation of the distinct clusters.
+        - I continued with the tableau graph visualizations. based on the feedbackss, I also create plots in R studio to explore our project topic, accompnaying with the statistical analysis.Since we want to explore the educational attainmet level influences on 
+the liquor sales, also based on different liquor categories. Including the Sample data of Iowa_All LiquorSales Education, Bar chart of the total volume of liquor in each county, and Multiple Time Series Plot on Liquor Sales.
 	- By utilizing descriptive summary statistics to condense important information, such as liquor sales volume, revenue, and demographics, I also included more illuminating charts and visualizations regarding liquor sales in various geographic regions. The results of correlation analysis, which looks at the relationship between educational attainment levels and earnings, suggest that those with higher incomes may be able to afford additional luxury and recreational activities, such as drinking alcohol. Consequently, alcohol sales may be higher in more affluent neighborhoods.
 
 Github:
