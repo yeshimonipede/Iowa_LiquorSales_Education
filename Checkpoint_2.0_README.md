@@ -90,5 +90,6 @@ Conclusion (still need to consider all results)
 - an informed and well supported assessment about whether or not there is correlation between liquor sales and education attainment levels in Iowa and if so which areas should be prioritized 
 for a targeted advertisement campaign intended to reduce alcohol-related issues in the state of Iowa. Forecasting techniques will also provide a suggestion for which counties should be 
 identified and monitored as "on the rise" counties in terms of predicted future liquor sales.
+
 -From the regression of liquor sales on the categorical and numerical variables, it's not hard to find that some major subcategories and type of item shows siginicant difference. There are three major categories of gins and during the process of classificating the correlation, the subcategories of liquor show different impacts among counties.
 That is a entry point for advertisement campaign; they would know which type of liquor, which brand of liquor to control. 
