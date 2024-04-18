@@ -1,0 +1,218 @@
+---
+title: "TimeExploration"
+author: "Yesh Onipede"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Setting up data paths 
+```{r}
+merged_data <- read.csv("Gin_LiquorSales_Education.csv")
+```
+
+Loading packages 
+```{r}
+library(forecast)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(cowplot)
+library(stats)
+
+
+```
+Creating an aggregated table and plotting 
+```{r}
+# Convert the date column to Date format 
+merged_data$date <- as.Date(merged_data$date)
+
+# Group the data by 'date and summarize to calculate the sum of each variable for each date
+aggregated_data <- merged_data %>%
+  group_by(date) %>%
+  summarize(total_sale_dollars = sum(sale.dollars),
+            total_sale_volume = sum(sale.volume),
+            total_sale_bottles = sum(sale.bottles))
+
+# Print the aggregated data frame (merged data grouped)
+print(aggregated_data)
+
+# Plotting
+ggplot(aggregated_data, aes(x = date)) +
+  geom_line(aes(y = total_sale_dollars, color = "Sales ($)")) +
+  geom_line(aes(y = total_sale_volume, color = "Volume (Liters)")) +
+  geom_line(aes(y = total_sale_bottles, color = "Bottles Sold")) +
+  labs(x = "Date", y = "Value", color = "Legend") +
+  ggtitle("Aggregated Sales, Volume, and Bottles Sold Over Time") +
+  theme_minimal()
+
+
+```
+
+```{r}
+
+# Convert the date column to Date format 
+merged_data$date <- as.Date(merged_data$date)
+
+# Extract year and month from the date column
+merged_data$year <- lubridate::year(merged_data$date)
+merged_data$month <- lubridate::month(merged_data$date)
+
+# Group the data by year and month, and summarize to calculate the sum of each variable for each month
+aggregated_data_month <- merged_data %>%
+  group_by(year, month) %>%
+  summarize(total_sale_dollars = sum(sale.dollars),
+            total_sale_volume = sum(sale.volume),
+            total_sale_bottles = sum(sale.bottles))
+
+aggregated_data_month$date <- as.Date(paste(aggregated_data_month$year, aggregated_data_month$month, "01", sep = "-"))
+
+
+# Print the aggregated data frame (merged data grouped by month and year)
+print(aggregated_data_month)
+
+
+```
+
+I tried to decompse the data seasonally but it failed even though it satisfied the requirement of having two cyles. Therefore it is safe to say that the data does not have any clear seasonality.
+```{r}
+
+
+# Perform seasonal decomposition
+#decomposition <- stl(aggregated_data_month$total_sale_dollars, s.window = "periodic")
+
+# Plot the decomposed components
+#autoplot(decomposition)
+
+```
+
+Linear regression model for total sale in dollars 
+```{r}
+# Run linear regression
+lm_model_dollars <- lm(total_sale_dollars ~ aggregated_data_month$date, data = aggregated_data_month)
+
+# View summary of the regression model
+summary(lm_model_dollars)
+
+# View summary of the regression model
+summary(lm_model_dollars)
+
+```
+
+The coefficient date is statistically significant. 
+Approximately 19.27% of variance is explained by the linear regression model.
+
+Plotting linear regression for total sale in dollars
+```{r}
+ggplot(aggregated_data_month, aes(x = date, y = total_sale_dollars)) +
+  geom_point(color = "blue", size = 3, alpha = 0.7) +  
+  geom_smooth(method = "lm", color = "red", linetype = "dashed", se = FALSE) +
+  labs(x = "Date", y = "Total Sale (Dollars)", title = "Linear Regression Model\n(Sales in Dollars)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 14),
+    axis.text.x = element_text(size = 12),  
+    axis.text.y = element_text(size = 12),  
+    legend.position = "none",
+    plot.margin = margin(20, 20, 20, 20)  # Adjust top, right, bottom, left margins
+  ) +
+  scale_x_date(date_labels = "%b\n%Y", limits = c(min(aggregated_data_month$date), max(aggregated_data_month$date))) +  
+  scale_y_continuous(labels = scales::comma)  
+```
+Plotting the residuals of total sales in dollars 
+```{r}
+
+residuals_dollars <- residuals(lm_model_dollars)
+
+# Plot histogram of residuals
+hist(residuals_dollars, breaks = 10, col = "lightblue", main = "Histogram of Residuals for lm_model_dollars", xlab = "Residuals")
+
+# Q-Q plot of residuals
+qqnorm(residuals_dollars)
+qqline(residuals_dollars)
+
+
+```
+
+The residuals are mostly normally distributed aside from the peak in the left tail. It is important that residuals follow a normal distribution as it is an assumption of linear regression. 
+
+Looking at the normal Q-Q plot, most of the points fall along the diagonal line which suggests little deviation from normality. This is a good sign for the linear model as it assume normality. 
+
+Linear regression model for total sale in volume
+```{r}
+lm_model_vol <- lm(total_sale_volume ~ date, data = aggregated_data_month)
+
+# View summary of the regression model
+summary(lm_model_vol)
+```
+
+Plotting linear regression for sales in volume 
+```{r}
+# Plot scatterplot with regression line
+ggplot(aggregated_data_month, aes(x = date, y = total_sale_volume)) +
+  geom_point(color = "blue", size = 3, alpha = 0.7) +  
+  geom_smooth(method = "lm", color = "red", linetype = "dashed", se = FALSE) +
+  labs(x = "Date", y = "Total Sale Volume", title = "Linear Regression Model\n(Sales in Volume)") +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 18, face = "bold", hjust = 0.5),
+    axis.title = element_text(size = 14),
+    axis.text.x = element_text(size = 12),  
+    axis.text.y = element_text(size = 12),  
+    legend.position = "none",
+    plot.margin = margin(20, 20, 20, 20)  # Adjust top, right, bottom, left margins
+  ) +
+  scale_x_date(date_labels = "%b\n%Y", limits = c(min(aggregated_data_month$date), max(aggregated_data_month$date))) +  
+  scale_y_continuous(labels = scales::comma)  
+
+
+```
+The date variable is significant at the 0.001 level.
+Approximately 55% of the variance is explained by the linear regression model.
+
+
+```{r}
+residuals_vol <- residuals(lm_model_vol)
+
+# Plot histogram of residuals
+hist(residuals_vol, breaks = 10, col = "lightblue", main = "Histogram of Residuals for lm_model_vol", xlab = "Residuals")
+
+# Q-Q plot of residuals
+qqnorm(residuals_vol)
+qqline(residuals_vol)
+```
+The histogram reveals that the residuals follow a pretty normal distribution with the peak centered in the middle and the bars mostly decreasing as they move toward the tails. The residual points stay very close to the diagonal line in the Normal Q-Q Plot which suggests that the criteria of normalacy is met. This is a good sign for the validation of the linear regression model. 
+
+
+Here I tested out a polynmoial regression models for sale in dollars but it offered no significance in the polynomial term so I will stick to the linear regression model.
+```{r}
+# Fit a polynomial regression model
+poly_degree <- 2  # Set the degree of the polynomial
+poly_formula <- as.formula(paste("total_sale_dollars ~ poly(date, ", poly_degree, ")", sep = ""))  # polynomial formula
+
+poly_lm_model_dollars <- lm(poly_formula, data = aggregated_data_month)
+
+# View summary of the polynomial regression model
+summary(poly_lm_model_dollars)
+
+```
+
+
+Here I tested out a polynomial regression but it revealed high significance at the linear term and hardly any significance at the quadratic term which to me suggests that a linear regression model is best for the volume data.
+```{r}
+# Fit a polynomial regression model
+poly_degree <- 2  # Set the degree of the polynomial
+poly_formula <- as.formula(paste("total_sale_volume ~ poly(date, ", poly_degree, ")", sep = "")) # polynomial formula
+
+poly_lm_model_vol <- lm(poly_formula, data = aggregated_data_month)
+
+# View summary of the polynomial regression model
+summary(poly_lm_model_vol)
+
+```
