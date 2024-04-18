@@ -1,0 +1,153 @@
+---
+title: 'Assessment about whether or not there is correlation between liquor sales and education attainment levels'
+subtitle: "Lowa Region"
+author: "Mingdong Yang"
+date: "`r Sys.Date()`"
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+rm(list=ls())
+setwd("/Users/timyang/Downloads/")
+install.packages("summarytools")
+library(tidyverse)
+library(kableExtra)
+library(gridExtra)
+library(ggthemes)
+library(scales)
+library(plotly)
+library(corrplot)
+library(ggmosaic)
+
+```
+
+## Information about the study
+An informed and well supported assessment about whether or not there is correlation between liquor sales and education attainment levels in Iowa and if so which areas should be prioritized for a targeted advertisement campaign intended to reduce alcohol-related issues in the state of Iowa. Forecasting techniques will also provide a suggestion for which counties should be identified and monitored as "on the rise" counties in terms of predicted future liquor sales
+
+## Study objectives
+
+We will create plots in R studio and Tableau to explore our project topic, accompnaying with the statistical analysis.Since we want to explore the educational attainmet level influences on 
+the liquor sales, also based on different liquor categories, how these socio-economic factors influence total sales? We are moving forward to see more patterns by using statistical analysis 
+and forecasting methods.
+
+```{r data importation}
+data<-read.csv("Iowa_AllLiquorSales_Education.csv",row.names =NULL)
+sample_n(data,10)%>%
+  kbl(booktabs = T)%>%
+  kable_classic("hover",bootstrap_options = "striped",
+                full_width = F,font_size = 12,position ="left")%>%
+  add_header_above(c("Sample data of Iowa_All LiquorSales Education"=18),font_size =20,color ="blue")
+```
+
+```{r understanding the dat}
+dim(data)
+str(data)
+```
+
+```{r}
+data%>%
+  group_by(county)%>%
+  summarise(volume=sum(volume))%>%
+  filter(volume>=1000000)%>%
+  ggplot(aes(county,volume,fill=county))+
+  geom_bar(stat ="identity")+
+  theme_minimal()+
+  scale_fill_pander()+
+  theme(axis.text.x = element_text(angle = 45, vjust=0.5),
+        legend.position = "bottom")+
+  ggtitle("Bar chart of the total volume of liquor in each county",subtitle ="Countries with more than 1000000 volume")+
+  ylab("Total volume of liquor")
+```
+
+```{r}
+data%>%
+  group_by(item)%>%
+  summarise(sale.dollars=sum(sale.dollars))%>%
+  filter(sale.dollars>=50000)%>%
+  ggplot(aes(item,sale.dollars,fill=item))+
+  geom_bar(stat ="identity")+
+  theme_minimal()+
+  coord_flip()+
+  scale_fill_pander()+
+  theme(axis.text.x = element_text(angle = 45, vjust=0.5),
+        legend.position = "none")+
+  ggtitle("Bar chart of the total sale in dollars for each item",subtitle ="Items with more than 50000 dollars")+
+  ylab("Total sales($)")
+```
+
+```{r}
+data%>%
+  mutate(date=as.Date(date,"%Y-%m-%d"))%>%
+  filter(date<"2016-08-29")%>%
+  group_by(date)%>%
+  summarise(retail.price=sum(retail.price),sale.bottles=sum(sale.bottles)
+            ,sale.voloume=sum(sale.volume),sale.dollars=sum(sale.dollars))%>%
+  plot_ly() %>%
+  add_lines(
+    data = data,
+    x = ~date,
+    y = ~retail.price,
+    name = "Retail Price",
+    line = list(color = "red", width = 2)
+  ) %>%
+  add_lines(
+    data = data,
+    x = ~date,
+    y = ~sale.bottles,
+    name = "Sales bottles",
+    line = list(color = "blue", width = 2, dash = "dot")) %>%
+  add_lines(
+    data = data,
+    x = ~date,
+    y = ~sale.volume,
+    name = "Sales Volume",
+    line = list(color = "green", width = 2, dash = "dash"))%>%
+  layout(
+    title = "Multiple Time Series Plot on Liquor Sales",
+    xaxis = list(
+      title = "Date",
+      titlefont = list(size = 16),
+      tickfont = list(size = 12)
+    ),
+    yaxis = list(
+      title = "Prices",
+      titlefont = list(size = 16),
+      tickfont = list(size = 12)
+    ),
+    legend = list(
+      title = "Series",
+      x = 0.05,
+      y = 0.95,
+      font = list(size = 12)
+    ))
+```
+
+```{r}
+data%>%
+  mutate(date=as.Date(date,"%Y-%m-%d"))%>%
+  group_by(date)%>%
+  summarise(retail.price=sum(retail.price),sale.bottles=sum(sale.bottles)
+            ,sale.voloume=sum(sale.volume),sale.dollars=sum(sale.dollars))%>%
+  plot_ly() %>%
+  add_lines(
+    data=data,
+    x=~date,
+    y=~sale.dollars,
+    name="Sales($)",
+    line=list(color="lightgray",width=2,dash="dash"))
+```
+
+
+```{r}
+colSums(is.na(data))/nrow(data)*100# The is presence of missing values
+```
+
+
+```{r}
+corrplot(cor(data%>%
+  dplyr::select(volume,retail.price,sale.bottles,sale.volume,sale.dollars,High.school.graduate.or.higher,Bachelor.s.degree.or.higher)%>%na.omit()),method ="number",type = "lower",bg ="lightskyblue",addCoef.col ="darkblue",pch.col ="deeppink",addgrid.col ="lightgray")
+```
