@@ -69,7 +69,6 @@ By partitioning data points into clusters based on similarity, K-means helps ide
 In the k-means clustering, based on the The number of clusters is set up by different counties for the nature of the dataset. In order to ensure the uniformity of the analysis, the same counties were chosen as for the regression part: johnson and benton.In deciding the number of clusters, a specific value (e.g., 3) was first tried to see the size of the tss, and after that three different methods were used to see what the OPTIMAL clusters were according to the optimal cluster to adjust the value of the previously set cluster. By choosing two different regional clusters, different trends are presented when the category of wine changes, due to the different unit on retail prices.
 More comparison between counties or cities would be explored by k means clustering.
 
-Translated with DeepL.com (free version)
 Regression Analysis
 ----------------------
 -to assess if there is a statistically significant relationship between education attainment levels and liquor sales 
