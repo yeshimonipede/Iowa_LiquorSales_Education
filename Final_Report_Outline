@@ -10,7 +10,7 @@ We will use a variety of methods to investigate the relationship, if any, betwee
 
 Visualizations:
 We will create plots in R studio and Tableau to explore our project topic, accompnaying with the statistical analysis.Since we want to explore the educational attainmet level influences on the liquor sales, also based on different liquor categories, how these socio-economic factors influence total sales? We are moving forward to see more patterns by using statistical analysis and forecasting methods.
-Data summary:
+
 
 Visualizations
 
@@ -26,6 +26,7 @@ Hypothesis testing:
 Regression Analysis
 -to assess if there is a statistically significant relationship between education attainment levels and liquor sales 
 -to find out the correlation between educational attainment levels and income within different counties
+-to explore if educational level threshould classifies the liquor sales either
 
 Forecasting 
 -Predicting which counties will have the largest increase in gin sales in upcoming quarters to target intervention in those counties
