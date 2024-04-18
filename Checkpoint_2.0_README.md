@@ -9,7 +9,9 @@ variable and very strong significance between time and sales in volume, which I 
 considering alcohol consumption. In this file, I also made some visualizations of the linear regression as well as two different ways to visualize the residuals of the  model which supports 
 the linear regression model. 
 
-
+Wendi:
+     - I am foucsing more on the regression analysis and the anova analysis based on the correlation between different variables. I cretae regressions on different sets of variables to find their significance on the liquor sales, with stars, and trying to investigate more on the specific type of liquor category or the item. Also, based on the educational level, i want to divide datasets into several cluster by a certain threshold of educational attainment level but failed to reload. Will moving forward.
+     - I find two specific counties and doing the k means clusters to group them. In the k means clustering, i try different methods to confirm the number of clusters and doing the group between variables. Under the k means, by merging colors of different liquor subcategory, it is clearer to target our main question.
 
 
 Github:
@@ -61,9 +63,13 @@ We have two main data tables when running our analyses:
 (2) a merged dataset between all liquor sales in Iowa and socioeconomic factors (such as education attainment levels)
 
 Hypothesis testing:
+------------------
 -using K-means clustering to compare differences between counties
 By partitioning data points into clusters based on similarity, K-means helps identify meaningful patterns and relationships within datasets. Its straightforward implementation and ability to handle large volumes of data make it a go-to method for exploratory analysis and pattern recognition across various domains.
----------------------
+In the k-means clustering, based on the The number of clusters is set up by different counties for the nature of the dataset. In order to ensure the uniformity of the analysis, the same counties were chosen as for the regression part: johnson and benton.In deciding the number of clusters, a specific value (e.g., 3) was first tried to see the size of the tss, and after that three different methods were used to see what the OPTIMAL clusters were according to the optimal cluster to adjust the value of the previously set cluster. By choosing two different regional clusters, different trends are presented when the category of wine changes, due to the different unit on retail prices.
+More comparison between counties or cities would be explored by k means clustering.
+
+Translated with DeepL.com (free version)
 Regression Analysis
 ----------------------
 -to assess if there is a statistically significant relationship between education attainment levels and liquor sales 
