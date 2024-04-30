@@ -97,7 +97,7 @@ After doing the ggplot of seperately, the regression trend showed results more c
 As high school degrees increase horizontally, the accumulative liquor sales increase either.
 ![liquor_sales_highschool](images/liquor_sales_highschool.png)
 
-doing the linear regression analysis on educatioanl-related variables, assuming the liquor assumption is also dependent on gin category and gin item name. 
+By looking at these two graphs, the comparison between the feature i
   
 ## Other Exploratory Analyses
 
