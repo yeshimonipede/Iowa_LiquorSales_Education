@@ -89,6 +89,12 @@ There are a few assumptions underlying linear regression analysis such as linear
 
 Both linear regression models suggest that historically liquor sales have decreased as a result of time progressing. This statistical significance of these models suggest that sales measured in both dollars and volume will continue to decrease as time increases. This information may be useful for the policy maker for multiple reasons. This information is valuable as it confirms that historically time does have an impact on liquor sales. The director of public health should be made aware of as many factors as possible that influence liquor sales in order to best make a plan to decrease liquor consumption. Another reason this information is valuable as it suggests that any resource allocation or targeted campaigning that the department of public health has applied from 2016 to 2017 was potentially helpful as gin sales did decrease in this time span. This may encourage the policy maker to continue certain efforts (i.e. continue targeting the specific regions that have been targeted during this time or continue a certain kind of resource allocation) that have already been applied in hopes of continuing to decrease liquor sales in Iowa.
 
+### Linear Regression Model testing the highschool graduation and bachelor degree on the liquor sales dollars
+By extracting the county name,liquor sale dollars and the high school graduation and bachelor degree statistical data in the csv, more observational findings of how the different educational attainment levels influence could be addressed. The linear regression showed that both high school graduation estimator and the bachelor degree estimator has the positive effect on the liquor sales. When the high school graduation percents increase 1 in unit, the liquor sale dollars will increase 319.2 accumulatively for counties; when the bachelor degree increases 1 in unit, the liquor sales will increase by 509.2 accumulatively for counties. Getting rid of the gin category and gin item name, the liquor sales (in dollars) is related to the changes of educational attainment level. 
+
+
+After doing the linear regression analysis on educatioanl-related variables, assuming the liquor assumption is also dependent on gin category and gin item name. 
+  
 ## Other Exploratory Analyses
 
 There were a couple of exploratory analyses conducted on the data that we cannot include in our policy recommendation with full confidence but we believe may still be valuable to the policy maker.
