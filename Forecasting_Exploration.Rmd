@@ -11,8 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 Setting up data paths 
 ```{r}
-setwd('/Users/yeshimonipede/Desktop/BC_Spring2024')
-merged_data <- read.csv("Gin_LiquorSales_Education.csv")
+merged_data <- read.csv("data/Gin_LiquorSales_Education.csv")
 
 ```
 

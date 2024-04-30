@@ -1,0 +1,438 @@
+---
+title: "Milestone 1"
+author: "Yesh Onipede"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Setting up data paths 
+```{r}
+# Read the CSV file using a relative file path
+merged_data <- read.csv("data/Gin_LiquorSales_Education.csv")
+
+# Check the structure of the data
+str(merged_data)
+
+
+```
+
+Loading packages 
+```{r}
+library(forecast)
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(cowplot)
+
+
+```
+Creating an aggregated table and plotting 
+```{r}
+# Convert the date column to Date format 
+merged_data$date <- as.Date(merged_data$date)
+
+# Group the data by 'date and summarize to calculate the sum of each variable for each date
+aggregated_data <- merged_data %>%
+  group_by(date) %>%
+  summarize(total_sale_dollars = sum(sale.dollars),
+            total_sale_volume = sum(sale.volume),
+            total_sale_bottles = sum(sale.bottles))
+
+# Print the aggregated data frame
+print(aggregated_data)
+
+# Plotting
+ggplot(aggregated_data, aes(x = date)) +
+  geom_line(aes(y = total_sale_dollars, color = "Sales ($)")) +
+  geom_line(aes(y = total_sale_volume, color = "Volume (Liters)")) +
+  geom_line(aes(y = total_sale_bottles, color = "Bottles Sold")) +
+  labs(x = "Date", y = "Value", color = "Legend") +
+  ggtitle("Aggregated Sales, Volume, and Bottles Sold Over Time") +
+  theme_minimal()
+
+
+```
+
+```{r}
+
+
+# Extract Year from the date column
+merged_data$year <- (lubridate::year(merged_data$date))
+
+# Creating an aggregated dataset based on year and month
+aggregated_data <- merged_data %>%
+  group_by(year, month) %>%
+  summarize(total_sale_dollars = sum(sale.dollars),
+            total_sale_volume = sum(sale.volume),
+            total_sale_bottles = sum(sale.bottles)) 
+
+# Print the updated aggregated data frame
+print(aggregated_data)
+
+
+
+
+
+
+```
+
+Creating time series objects
+```{r}
+
+# Create a date column using the year and quarter components
+aggregated_data$date <- as.Date(paste0(aggregated_data$year, "-", aggregated_data$month), format = "%Y-%m")
+
+# Convert to quarterly time series for sales (dollars)
+ts_data_dollars <- ts(aggregated_data$total_sale_dollars, frequency = 12, start = c(min(aggregated_data$year), 1))
+
+# Convert to quarterly time series for sales (bottles)
+ts_data_bottles <- ts(aggregated_data$total_sale_bottles, frequency = 12, start = c(min(aggregated_data$year), 1))
+
+# Convert to quarterly time series for sales (volume)
+ts_data_volume <- ts(aggregated_data$total_sale_volume, frequency = 12, start = c(min(aggregated_data$year), 1))
+
+
+```
+
+
+
+Forecasting with an snaive model (dollars)
+```{r}
+# Fit the snaive model
+snaive_model_dollars <- snaive(ts_data_dollars)
+
+# Forecast for the next 4 quarters
+forecast_result_dollars<- forecast(snaive_model_dollars, h = 8)
+
+# Print the forecast
+print(forecast_result_dollars)
+
+autoplot(forecast_result_dollars) + 
+  autolayer(ts_data_dollars, series = "Seasonal naive model") +
+  xlab("Year") +
+  ylab("Total Sale Dollars") +
+  ggtitle("Forecast of Total Sale Dollars") +
+  guides(colour = guide_legend(title = "Forecast"))  
+
+```
+#ARIMA forecast but I am not sure why this is not working yet since I am getting the same point forecast for every upcoming quarter 
+```{r}
+# Fit the ARIMA model
+arima_model <- auto.arima(ts_data_dollars)
+
+# Forecast for the next 8 quarters
+forecast_result_arima <- forecast(arima_model, h = 24)
+
+# Print the ARIMA forecast
+print(forecast_result_arima)
+
+# Plot the ARIMA forecast
+autoplot(forecast_result_arima) + 
+  autolayer(ts_data_dollars, series = "Actual") +
+  xlab("Year") +
+  ylab("Total Sale Dollars") +
+  ggtitle("ARIMA Forecast of Total Sale Dollars") +
+  guides(colour = guide_legend(title = "Forecast"))
+
+```
+```{r}
+# Fit SES model
+ses_model <- ets(ts_data_dollars)
+
+# Forecast for the next 8 quarters
+forecast_result_ses <- forecast(ses_model, h = 24)
+
+# Print the SES forecast
+print(forecast_result_ses)
+
+# Plot the SES forecast
+autoplot(forecast_result_ses) + 
+  autolayer(ts_data_dollars, series = "Actual") +
+  xlab("Year") +
+  ylab("Total Sale Dollars") +
+  ggtitle("SES Forecast of Total Sale Dollars") +
+  guides(colour = guide_legend(title = "Forecast"))
+
+```
+
+
+
+Forecasting with an snaive model (bottles)
+```{r}
+# Fit the snaive model
+snaive_model_bottles <- snaive(ts_data_bottles)
+
+# Forecast for the next 4 quarters
+forecast_result_bottles <- forecast(snaive_model_bottles, h = 8)
+
+# Print the forecast
+print(forecast_result_bottles)
+
+autoplot(forecast_result_bottles) + 
+  autolayer(ts_data_bottles, series = "Seasonal Naive Model") +
+  xlab("Year") +
+  ylab("Total Sale (Bottles)") +
+  ggtitle("Forecast of Total Sale (Bottles)") +
+  guides(colour = guide_legend(title = "Forecast"))  
+```
+
+Forecasting with an snaive (volume)
+```{r}
+# Fit the snaive model
+snaive_model_volume <- snaive(ts_data_volume)
+
+# Forecast for the next 4 quarters
+forecast_result_volume <- forecast(snaive_model_volume, h = 8)
+
+# Print the forecast
+print(forecast_result_volume)
+
+autoplot(forecast_result_volume) + 
+  autolayer(ts_data_volume, series = "Seasonal Naive Model") +
+  xlab("Year") +
+  ylab("Total Sale (Volume)") +
+  ggtitle("Forecast of Total Sale (Volume)") +
+  guides(colour = guide_legend(title = "Forecast"))  
+
+```
+
+Create an aggregated table by county
+```{r}
+# Extract Year from the date column
+merged_data$year <- lubridate::year(merged_data$date)
+
+# Creating an aggregated dataset based on year, quarter, and county
+aggregated_data_county <- merged_data %>%
+  group_by(year, month, county) %>%
+  summarize(total_sale_dollars = sum(sale.dollars),
+            total_sale_volume = sum(sale.volume),
+            total_sale_bottles = sum(sale.bottles)) %>%
+  mutate(year_quarter = paste0(year, month))
+
+# Print the updated aggregated data frame
+print(aggregated_data_county)
+
+```
+
+i.e. Forecasating for a specific county 
+```{r}
+
+# Filter the aggregated data to include only rows where the county is "Adair"
+aggregated_data_adair <- filter(aggregated_data_county, county == "Adair")
+
+# Create a date column using the year and quarter components
+aggregated_data_adair$date <- as.Date(paste0(aggregated_data_adair$year, "-", aggregated_data_adair$month), format = "%Y-%m")
+
+# Convert to quarterly time series for sales (dollars)
+ts_data_dollars_adair <- ts(aggregated_data_adair$total_sale_dollars, frequency = 12, start = c(min(aggregated_data_adair$year), 1))
+
+# Convert to quarterly time series for sales (bottles)
+ts_data_bottles_adair <- ts(aggregated_data_adair$total_sale_bottles, frequency = 12, start = c(min(aggregated_data_adair$year), 1))
+
+# Convert to quarterly time series for sales (volume)
+ts_data_volume_adair <- ts(aggregated_data_adair$total_sale_volume, frequency = 12, start = c(min(aggregated_data_adair$year), 1))
+
+```
+
+Forecasating for dollar sales for adair
+```{r}
+
+arima_dollars_adair <- auto.arima(ts_data_dollars_adair)
+
+forecast_adair<-forecast(arima_dollars_adair,h=12)
+# Print the forecasted values
+print(forecast_adair)
+
+# Plot the forecasted values
+autoplot(forecast_adair) +
+  ggtitle("Forecasted Dollar Sales for County Adair (Seasonal Naive Method)") +
+  xlab("Year") +
+  ylab("Dollar Sales")
+```
+
+
+i.e. Forecasating for a specific county 
+```{r}
+
+# Filter the aggregated data to include only rows where the county is "Adair"
+aggregated_data_adams <- filter(aggregated_data_county, county == "Adams")
+
+# Create a date column using the year and quarter components
+aggregated_data_adams$date <- as.Date(paste0(aggregated_data_adams$year, "-", aggregated_data_adams$month), format = "%Y-%m")
+
+# Convert to quarterly time series for sales (dollars)
+ts_data_dollars_adams<- ts(aggregated_data_adams$total_sale_dollars, frequency = 12, start = c(min(aggregated_data_adams$year), 1))
+
+# Convert to quarterly time series for sales (bottles)
+ts_data_bottles_adams <- ts(aggregated_data_adams$total_sale_bottles, frequency = 12, start = c(min(aggregated_data_adams$year), 1))
+
+# Convert to quarterly time series for sales (volume)
+ts_data_volume_adams <- ts(aggregated_data_adams$total_sale_volume, frequency = 12, start = c(min(aggregated_data_adams$year), 1))
+
+```
+
+Forecasating for dollar sales for adair
+```{r}
+
+arima_dollars_adams <- auto.arima(ts_data_dollars_adams)
+
+forecast_adams<-forecast(arima_dollars_adams,h=12)
+# Print the forecasted values
+print(forecast_adams)
+
+# Plot the forecasted values
+autoplot(forecast_adams) +
+  ggtitle("Forecasted Dollar Sales for County Adair (Seasonal Naive Method)") +
+  xlab("Year") +
+  ylab("Dollar Sales")
+```
+
+
+Looping through each county and creating a time series of sales in terms of bottles and in terms of volume
+```{r}
+create_time_series <- function(data, target_county) {
+  # Filter the data for the specific county
+  county_data <- filter(data, county == target_county)
+
+
+  # Convert to monthly time series for sales (dollars)
+    ts_sales <- ts(county_data$total_sale_dollars, frequency = 12, start = c(2016,1), end = c(2017,12))
+  
+  # Convert to monthly time series for volume
+    ts_volume <- ts(county_data$total_sale_volume, frequency = 12, start = c(2016,1), end = c(2017,12))
+  
+  # Return a list containing the time series objects
+  return(list(
+    ts_sales = ts_sales,
+    ts_volume = ts_volume
+  ))
+}
+
+# Get unique county names
+county_names <- unique(aggregated_data_county$county)
+
+# Create an empty list to store time series data
+time_series_list <- list()
+
+# Loop through each county and create time series
+for (county in county_names) {
+  time_series_list[[county]] <- create_time_series(aggregated_data_county, county)
+}
+
+
+```
+ARIMA model across all counties and outputting the counties that are predicted to have the largest increase over the next two years 
+```{r}
+library(forecast)
+
+# Function to fit ARIMA model and forecast liquor sales
+fit_arima_forecast <- function(ts_sales) {
+  # Fit ARIMA model
+  arima_model <- auto.arima(ts_sales)
+  
+  # Forecast liquor sales for the next two years
+  forecast_values <- forecast(arima_model, h = 24)  # 24 months = 2 years
+  
+  # Return the forecasted values
+  return(forecast_values)
+}
+
+# Initialize a list to store forecasted sales for each county
+forecasted_sales <- list()
+
+# Loop through each county
+for (county in county_names) {
+  # Filter data for the current county
+  county_data <- time_series_list[[county]]
+  
+  # Fit ARIMA model and forecast liquor sales
+  forecast_values <- fit_arima_forecast(county_data$ts_sales)
+  
+  # Store the forecasted values for the county
+  forecasted_sales[[county]] <- forecast_values
+}
+
+# Calculate the increase in liquor sales for each county
+increase_sales <- sapply(forecasted_sales, function(forecast_values) {
+  # Extract the forecasted values for the next two years
+  forecast_sales <- forecast_values$mean
+  
+  # Calculate the increase in liquor sales
+  increase <- forecast_sales[length(forecast_sales)] - forecast_sales[1]
+  
+  return(increase)
+})
+
+# Find the counties with the largest forecasted increase in liquor sales
+top_counties <- names(increase_sales)[order(increase_sales, decreasing = TRUE)][1:5]
+
+# Print the top counties
+print(top_counties)
+
+# Autoplot the forecasts for the top counties
+for (county in top_counties) {
+  # Plot the forecast
+  autoplot(forecasted_sales[[county]], main = paste("Forecast for", county), ylab = "Sales")
+}
+
+```
+```{r}
+library(forecast)
+
+# Function to fit seasonal naïve (snaive) model and forecast liquor sales
+fit_snaive_forecast <- function(ts_sales) {
+  # Fit seasonal naïve (snaive) model
+  snaive_model <- snaive(ts_sales)
+  
+  # Forecast liquor sales for the next two years
+  forecast_values <- forecast(snaive_model, h = 24)  # 24 months = 2 years
+  
+  # Return the forecasted values
+  return(forecast_values)
+}
+
+# Initialize a list to store forecasted sales for each county using snaive model
+forecasted_sales_snaive <- list()
+
+# Loop through each county
+for (county in county_names) {
+  # Filter data for the current county
+  county_data <- time_series_list[[county]]
+  
+  # Fit snaive model and forecast liquor sales
+  forecast_values <- fit_snaive_forecast(county_data$ts_sales)
+  
+  # Store the forecasted values for the county
+  forecasted_sales_snaive[[county]] <- forecast_values
+}
+
+# Calculate the increase in liquor sales for each county using snaive forecasts
+increase_sales_snaive <- sapply(forecasted_sales_snaive, function(forecast_values) {
+  # Extract the forecasted values for the next two years
+  forecast_sales <- forecast_values$mean
+  
+  # Calculate the increase in liquor sales
+  increase <- forecast_sales[length(forecast_sales)] - forecast_sales[1]
+  
+  return(increase)
+})
+
+# Find the counties with the largest forecasted increase in liquor sales using snaive forecasts
+top_counties_snaive <- names(increase_sales_snaive)[order(increase_sales_snaive, decreasing = TRUE)][1:5]
+
+# Print the top counties based on snaive forecasts
+print(top_counties_snaive)
+
+# Autoplot the forecasts for the top counties using snaive forecasts
+for (county in top_counties_snaive) {
+  # Plot the forecast
+  autoplot(forecasted_sales_snaive[[county]], main = paste("Seasonal Naïve Forecast for", county), ylab = "Sales")
+}
+
+```
