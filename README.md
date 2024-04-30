@@ -68,7 +68,9 @@ A linear regression analysis revealed that there is a significant relationship b
 
 ### Linear Regression Model examining the relationship between time and gin sales (in dollars)
 
-    ![Linear Regression (Sales in Dollars)](images/linear_regression_sales_dollars.png)
+```         
+![Linear Regression (Sales in Dollars)](images/linear_regression_sales_dollars.png)
+```
 
 ![](images/linear_regression_sales_dollars-01.png)
 
@@ -80,7 +82,12 @@ A linear regression analysis revealed that there is a significant relationship b
 
 There are a few assumptions underlying linear regression analysis such as linearity, independence of observations, constant variance and normality of residuals. Many of these assumptions can be assessed with a histogram of the residuals and a Quantile-Quantile plot. The bell shapted histogram of the residuals and the Q-Q plot both suggest that these models meet these assumptions. The points on the Q-Q plot form a straight, diagonal line as they should. The fulfillment of these assumptions strengthens the reliability of these linear regression models and adds validity to our conclusion that time and liquor sales exhibit a statistically significant relationship.
 
-Both linear regression model suggests that historically liquor sales have decreased as a result of time progressing. This statistical significance of these models suggest that sales measured in both dollars and volume will continue to decrease as time increases. This information may be useful for the policy maker for multiple reasons. This information is valuable as it confirms that historically time does have an impact on liquor sales. The director of public health should be made aware of as many factors as possible that influence liquor sales in order to best make a plan to decrease liquor consumption. Another reason this information is valuable as it suggests that any resource allocation or targeted campaigning that the department of public health has applied from 2016 to 2017 was potentially helpful as gin sales did decrease in this time span. This may encourage the policy maker to continue certain efforts (i.e. continue targeting the specific regions that have been targeted during this time or continue a certain kind of resource allocation) that have already been applied in hopes of continuing to decrease liquor sales in Iowa.
+![Residual Histogram Dollars](images/residual_hist_dollars.png)
+![Residual Histogram Vol](images/residual_hist_vol.png)
+![Q-Q Plot Linear Regression](images/Q-Q_plot_linear_reg.png)
+![Q-Q Plot Vol](images/Q-Qplot_vol.png)
+
+Both linear regression models suggest that historically liquor sales have decreased as a result of time progressing. This statistical significance of these models suggest that sales measured in both dollars and volume will continue to decrease as time increases. This information may be useful for the policy maker for multiple reasons. This information is valuable as it confirms that historically time does have an impact on liquor sales. The director of public health should be made aware of as many factors as possible that influence liquor sales in order to best make a plan to decrease liquor consumption. Another reason this information is valuable as it suggests that any resource allocation or targeted campaigning that the department of public health has applied from 2016 to 2017 was potentially helpful as gin sales did decrease in this time span. This may encourage the policy maker to continue certain efforts (i.e. continue targeting the specific regions that have been targeted during this time or continue a certain kind of resource allocation) that have already been applied in hopes of continuing to decrease liquor sales in Iowa.
 
 ## Other Exploratory Analyses
 
@@ -92,11 +99,15 @@ A forecasting analysis was conducted. The intention of this was to use various f
 
 ARIMA and seasonal naive models were considered for this purpose. We hesitate to include the results from the seasonal naive model in our formal policy recommendation as seasonal naive models are quite naive models that simply consider the liquor sales from the previous seasonal period. However, we failed to identify seasonality in the data, so we expect these estimates to be poor. According to the seasonal naive model, the counties that are predicted to have the largest increase of gin sales in the next two years are:
 
-    "Woodbury"    "Winneshiek"  "Clay"        "Cerro Gordo" "Story"   
+```         
+"Woodbury"    "Winneshiek"  "Clay"        "Cerro Gordo" "Story"   
+```
 
 The same approach was followed using ARIMA models. Though ARIMA models are more complex, we hesitate to formally includue the results from these models in our formal policy recommendation as many of the forecasts of gin sales in the 24 months were identical to the month before and the month after. This fixed, linear forecast is likely due to a lack of data points as we only have 24 months of data to work with and potentially also related to a lack of seasonality in the data. However, the ARIMA models were able to identify the five counties that are deemed "high risk" as they are predicted to have the largest increase in gin sales (in volume) in the next two years. These counties are:
 
-     "Black Hawk" "Webster"  "Clinton"  "Harrison"  "Union"     
+```         
+ "Black Hawk" "Webster"  "Clinton"  "Harrison"  "Union"     
+```
 
 Though we encourage the director of public health to consider these models and be aware of future liquor sales in these specific regions, we do not feel as if our models worked well enough to include the output from these models in our official policy recommendation.
 
