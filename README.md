@@ -92,7 +92,10 @@ Both linear regression models suggest that historically liquor sales have decrea
 ### Linear Regression Model testing the highschool graduation and bachelor degree on the liquor sales dollars
 By extracting the county name,liquor sale dollars and the high school graduation and bachelor degree statistical data in the csv, more observational findings of how the different educational attainment levels influence could be addressed. The linear regression showed that both high school graduation estimator and the bachelor degree estimator has the positive effect on the liquor sales. When the high school graduation percents increase 1 in unit, the liquor sale dollars will increase 319.2 accumulatively for counties; when the bachelor degree increases 1 in unit, the liquor sales will increase by 509.2 accumulatively for counties. Getting rid of the gin category and gin item name, the liquor sales (in dollars) is related to the changes of educational attainment level. 
 
+After doing the ggplot of seperately, the regression trend showed results more clearly.As bachelor degrees increase horizontally, the accumulative liquor sales increase.
 ![liquor sales bachelor degree](images/liquor_sales_bachelor_degree.png)
+As high school degrees increase horizontally, the accumulative liquor sales increase either.
+![liquor_sales_highschool](images/liquor_sales_highschool.png)
 
 doing the linear regression analysis on educatioanl-related variables, assuming the liquor assumption is also dependent on gin category and gin item name. 
   
