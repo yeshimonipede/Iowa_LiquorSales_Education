@@ -84,7 +84,7 @@ I tried to decompse the data seasonally but it failed even though it satisfied t
 
 
 # Perform seasonal decomposition
-#decomposition <- stl(aggregated_data_month$total_sale_dollars, s.window = "periodic")
+#decomposition <- stl(aggregated_data_month$total_sale_volume, s.window = "periodic")
 
 # Plot the decomposed components
 #autoplot(decomposition)
@@ -131,11 +131,12 @@ Plotting the residuals of total sales in dollars
 residuals_dollars <- residuals(lm_model_dollars)
 
 # Plot histogram of residuals
-hist(residuals_dollars, breaks = 10, col = "lightblue", main = "Histogram of Residuals for lm_model_dollars", xlab = "Residuals")
+hist(residuals_dollars, breaks = 10, col = "lightblue", main = "Histogram of Residuals for Linear Regression (Dollars)", xlab = "Residuals")
 
 # Q-Q plot of residuals
-qqnorm(residuals_dollars)
+qqnorm(residuals_dollars, main = "Q-Q Plot of Residuals for Linear Regression (Dollars)")
 qqline(residuals_dollars)
+
 
 
 ```
@@ -178,14 +179,16 @@ Approximately 55% of the variance is explained by the linear regression model.
 
 
 ```{r}
-residuals_vol <- residuals(lm_model_vol)
-
 # Plot histogram of residuals
-hist(residuals_vol, breaks = 10, col = "lightblue", main = "Histogram of Residuals for lm_model_vol", xlab = "Residuals")
+hist(residuals_vol, breaks = 10, col = "lightblue", main = "Histogram of Residuals for linear regression model (Volume)", xlab = "Residuals")
 
-# Q-Q plot of residuals
-qqnorm(residuals_vol)
+# Q-Q plot of residuals with no default title
+qqnorm(residuals_vol, main = NULL)
 qqline(residuals_vol)
+
+# Add title to the Q-Q plot
+title(main = "Q-Q Plot of Residuals for linear regression model (Volume)")
+
 ```
 The histogram reveals that the residuals follow a pretty normal distribution with the peak centered in the middle and the bars mostly decreasing as they move toward the tails. The residual points stay very close to the diagonal line in the Normal Q-Q Plot which suggests that the criteria of normalacy is met. This is a good sign for the validation of the linear regression model. 
 
