@@ -92,7 +92,7 @@ Figure xxxx illustrates the relationship between bachelor's degree rates and liq
 
 ***should title be "Relationship between Bachelor's Degree Rates and Liquor Sales"***
 
-![liquor sales bachelor degree](images/liquor_sales_bachelor_degree.png)
+![liquor_sales_bachelor](images/liquor_sales_bachelor.png)
 
 Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars.
 
