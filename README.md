@@ -224,7 +224,9 @@ Getting used to version control in RStudio was a bit difficult for a group of be
 ### Summary of analytic methodology 
 
 Linear regression analyses between gin sales (in both bottles and sales) from 2016-2017
+
 Linear regression analyses between gin sales on bachelor degree and high school graduation ratio
+
 two-sample t test between higher/lower educational attainment level 
 
 
