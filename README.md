@@ -147,18 +147,12 @@ To provide a more comprehensive analysis, we can compare the relationship betwee
 
 <figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/b471f90f-04e1-4405-9825-05fd6527b985"/></figure>
 
-***This graph is a little confusing. x and y Axis titles are smushed and the key is not that descriptive to***
-
 <figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/77a85bf9-ba5f-46c1-8f73-c74d5d0ac9b3">
 </figure>
 
 The plot above displays the total volume of liquor sold within each county where the volume exceeds 1,000,000 units. This figure is useful for identifying counties that generated significant revenue from liquor production. By knowing which counties have significant liquor sales volumes, the Director can target interventions more effectively. They can allocate resources for public health programs or policies tailored to areas where alcohol consumption is highest. Notably, the counties with the largest total volume of liquor sales are Polk, Scott, Linn, and Johnson.
 
-***Not really sure what the point of this plot is?***
 
-<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/47b0e7d8-d985-45f9-9865-cbcffc12d85a"/></figure>
-
-Its evident that Tanqueray gin had the highest total sales which seems to be the most profitable item sold, we proceeded to identifying the trend nature of the retail price, sales for bottles and the volume sold which is presented as follows
 
 
 Similar to the chart above we also see a downward trend on the sale price in dollar from 2016-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
@@ -172,6 +166,7 @@ Based on the correlation analysis, we found that the percentage of individuals w
 
 Additionally, the sale of liquor, retail price, sales for bottles, and sales volume were highly correlated with each other. The retail price and volume had a correlation coefficient of 0.4. This indicates that changes in retail price and volume tend to move together, suggesting a relationship between the price at which liquor is sold and the quantity sold. This is evidence for the decision maker that though a lot of our analyses consider sales in dollars, the trends that we are identifying are still relevant to liquor consumption and not just liquor sales in dollars.
 
+Tableau link: https://public.tableau.com/app/profile/mingdong.yang/viz/Liquorsalesandeducationanalysis/Dashboard1?publish=yes
 Maybe crop?
 
 ## Other Exploratory Analyses
@@ -213,11 +208,11 @@ If we change another county as a target to find liquor sales on retail price and
 
 **Advantages**
 
-There are some notable advantages of conducting data analysis in RStudio. One major advantage is that RStudio is really compatible with working in Github. Creating, maintaining, and formatting the README file in RStudio was quite simple since it functions practically like any other word processing software. This made it easy to embed images, add headers, and format the README report like a normal document. Another convenient aspect is that RStudio works well with reading in files from Github. RStudio adjusts the working directory to where the file that is trying to be pulled in is located. This means that anyone who clones our repo, including our data folder, can seamlessly run our analysis scripts.
+There are some notable advantages of conducting data analysis in RStudio. One major advantage is that RStudio is really compatible with working in Github. Creating, maintaining, and formatting the README file in RStudio was quite simple since it functions practically like any other word processing software. This made it easy to embed images, add headers, and format the README report like a normal document. Another convenient aspect is that RStudio works well with reading in files from Github. RStudio adjusts the working directory to where the file that is trying to be pulled in is located. This means that anyone who clones our repo, including our data folder, can seamlessly run our analysis scripts. With Tableau, we can easily construct interactive dashboards and visualizations by dragging and dropping data fields into the canvas, all without having to write any code. This makes it perfect for exploratory analysis and quick insights because it enables rapid prototyping and iteration. Numerous data sources, including as databases, spreadsheets, cloud services, and big data platforms, are easily integrated with Tableau. As a result, we may connect to and evaluate data from several sources simultaneously.
 
 **Disadvantages**
 
-Getting used to version control in RStudio was a bit difficult for a group of beginners. Managing version conflicts on the README file was definitely challenging and we had to redo aspects of our report that disappeared as a result of version complications. An asset of RStudio was definitely being able to use different packages and libraries. However, familiarizing yourself with the packages that you need was challenging at times. This was relevant in a group project because people used different packages for their own analyses.
+Getting used to version control in RStudio was a bit difficult for a group of beginners. Managing version conflicts on the README file was definitely challenging and we had to redo aspects of our report that disappeared as a result of version complications. An asset of RStudio was definitely being able to use different packages and libraries. However, familiarizing yourself with the packages that you need was challenging at times. This was relevant in a group project because people used different packages for their own analyses. Compared to other coding languages, Tableau offer fewer customization choices despite its extensive visualization capabilities. We run into problems while attempting to develop really intricate or bespoke representations. Large datasets and intricate computations also cause us to run into performance problems, especially when we are utilizing real-time connectivity to data sources. We have noticed that load times and refresh rates are slower, particularly on dashboards that are not as optimized.
 
 # Conclusion
 
