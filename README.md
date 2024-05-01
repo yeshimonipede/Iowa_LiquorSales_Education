@@ -149,7 +149,8 @@ To provide a more comprehensive analysis, we can compare the relationship betwee
 
 ***This graph is a little confusing. x and y Axis titles are smushed and the key is not that descriptive to***
 
-<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/bf3e6363-6dee-4a62-a279-82a357706c9c"/></figure>
+<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/77a85bf9-ba5f-46c1-8f73-c74d5d0ac9b3">
+</figure>
 
 The plot above displays the total volume of liquor sold within each county where the volume exceeds 1,000,000 units. This figure is useful for identifying counties that generated significant revenue from liquor production. By knowing which counties have significant liquor sales volumes, the Director can target interventions more effectively. They can allocate resources for public health programs or policies tailored to areas where alcohol consumption is highest. Notably, the counties with the largest total volume of liquor sales are Polk, Scott, Linn, and Johnson.
 
@@ -159,13 +160,13 @@ The plot above displays the total volume of liquor sold within each county where
 
 Its evident that Tanqueray gin had the highest total sales which seems to be the most profitable item sold, we proceeded to identifying the trend nature of the retail price, sales for bottles and the volume sold which is presented as follows
 
-***Also a bit confused about this plot!***
-
-<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/f9148aa2-2479-4a17-b2ca-4c158b3cbd8e"/></figure>
 
 Similar to the chart above we also see a downward trend on the sale price in dollar from 2016-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
 
 <figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/db73c4a1-8aa4-4beb-a4b6-2c2c4b16ffbc"/></figure>
+
+<figure><img  src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/00e057d5-800c-498d-9822-6545ba480fbd">
+</figure>
 
 Based on the correlation analysis, we found that the percentage of individuals with at least a bachelor's degree had a strong relationship with the percentage of high school graduates or higher, with a correlation coefficient of 0.56. This suggests that counties with higher levels of bachelor's degree attainment tend to also have higher levels of high school graduation.
 
