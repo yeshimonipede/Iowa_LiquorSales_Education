@@ -103,8 +103,9 @@ Regressing the high school graduation and bachelor degree statistical data help 
 
 By setting the higher highschool graduation of 0.9, the two-sample t test process seperate counties on higher highschool graduation with 0.9 or higher, and lower highschool graduation with 0.9 or lower. The seperation of these two groups of data create the basis of two sample t-test, and the p-value is smaller than the chosen significance level , we reject the null hypothesis that there is a significant difference in the proportion with high school graduation between the two groups.
 ![two_sample_highschool](images/two_sample_highschool.png)
-The similar process also went through of seperating counties on higher bachelor degrees and lower bachelor degrees. The threshold is 0.2, and 
 ![two_sample_bachelor](images/two_sample_bachelor.png)
+The similar process also went through of seperating counties on higher bachelor degrees and lower bachelor degrees. The threshold is 0.2, and based onthe p-value(still smaller than the chosen significance level), there is a significant difference in the proportion with bachelor degree between higher bachelor degree groups and lower bachelor group. Counting the number of counties with higher bachelor degree(>0.2), there are only 51 counties. The plot of the relationship between liquor sales and this group's distribution of bachelor could 
+help narrow the analysis and clearly saw a trend: as educational attainment rises, alcohol consumption goes from higher to less to near zero.
 
 
 
