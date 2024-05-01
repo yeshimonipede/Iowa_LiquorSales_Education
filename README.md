@@ -163,6 +163,9 @@ The same approach was followed using ARIMA models. Though ARIMA models are more 
 
 Though we encourage the director of public health to consider these models and be aware of future liquor sales in these specific regions, we do not feel as if our models worked well enough to include the output from these models in our official policy recommendation.
 
+Since the policy recommendation is related to more factors like socioeconomic, it's more reasonable that the analysis could be conducted by connecting regression on educational attainment level( high school education and bachelor degree). We eager to explore that if these socioeconomic factors have impacts on the liquor consumption, and whether there is a relationship between the "high risk" county and different educational attainment levels. 
+
+A KNN analysis was utilized to try that if we could get some exploration results from it. Before truly using the KNN, the methods to confirm optimal clusters needed to be applied, and there are total three methods: elbow method, silhouette, gap statistic method. Going these three methods and the result of optimal cluster is the best combination of it. However, due to the limitness of dataset and predictors, there is no common combination and the optimal cluster number was chose manually as four. 
 # Conclusion
 
 # Policy Recommendation
