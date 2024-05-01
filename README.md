@@ -123,7 +123,8 @@ The figure xxx illustrates the relationship between bachelor's degree rates and 
 
 ![liquor_sales_bachelor](images/liquor_sales_bachelor_degree.png)
 
-Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars. ![liquor_sales_highschool](images/liquor_sales_highschool.png) ***Maybe needs some units on the x axis and change title to "Relationship between High School Diploma Rates and Liquor Sales"***
+Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars. 
+![liquor_sales_highschool](images/liquor_sales_highschool.png) 
 
 Comparing the two graphs, we can analyze the characteristics of high school graduation and bachelor's degrees. The distribution of high school graduation percentages is skewed to the left, indicating that most people in all counties in Iowa have a graduation rate of over 90-95%. This is reflected in the clustering of data points around the 0.90-0.95 range. On the other hand, the distribution of bachelor's degrees is skewed to the right, suggesting that most people in these counties do not have bachelor's degrees. The number of data points sharply decreases when the bachelor's degree rate exceeds 0.3, while at the same time, there is an increase in the cumulative liquor sales.
 
@@ -203,7 +204,11 @@ To achieve this, a KNN (K-Nearest Neighbors) analysis was utilized. KNN can clas
 
 ![johnson_county_liquor](images/johnson_county_liquor.png)
 
-Selecting the county johnson as one instance of KNN analysis. Johnson has the highest bachelor degree ratio among all counties(0.543), and by inducing the gin subcategories and their retail prices, we expect to see some intercations of how the higher bachelor degree relating to different gin categories. Will people choose to buy more expensive gin when the bachelor degree ratio is higher than 0.2? From the plot, we could locate rough patterns that people may tend to buy higher standards of gin, and as retail prices increase, the gin consumptions increase. However, this increasing trend doesn't mean that people consumes a lot on liquor. ![benton_county_liquor](images/benton_county_liquor.png)
+Selecting the county johnson as one instance of KNN analysis. Johnson has the highest bachelor degree ratio among all counties(0.543), and by inducing the gin subcategories and their retail prices, we expect to see some intercations of how the higher bachelor degree relating to different gin categories. Will people choose to buy more expensive gin when the bachelor degree ratio is higher than 0.2? From the plot, we could locate rough patterns that people may tend to buy higher standards of gin, and as retail prices increase, the gin consumptions increase. However, this increasing trend doesn't mean that people consumes a lot on liquor. 
+![benton_county_liquor](images/benton_county_liquor.png)
+
+If we change another county as a target to find liquor sales on retail price and gin subcategory, similar patterns were showed but it's a little bit difficult to conclude that this pattern is applicable for other counties either. The subcategory of "American dry gins" clustered and liquor sales are high for this cluster, and when the retail price increases, the points that represent clusters become blurred and liquor sales increase in a slow trend. Since we did not explore more counties on lower high school graduation rates/ higher high school graduation rates, 
+
 
 ## Advantages and Challenges of Data Analysis in RStudio and Tableau 
 
