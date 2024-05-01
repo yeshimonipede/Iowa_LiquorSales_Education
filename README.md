@@ -106,7 +106,7 @@ By setting the higher highschool graduation of 0.9, the two-sample t test proces
 ![two_sample_bachelor](images/two_sample_bachelor.png)
 The similar process also went through of seperating counties on higher bachelor degrees and lower bachelor degrees. The threshold is 0.2, and based onthe p-value(still smaller than the chosen significance level), there is a significant difference in the proportion with bachelor degree between higher bachelor degree groups and lower bachelor group. Counting the number of counties with higher bachelor degree(>0.2), there are only 51 counties. The plot of the relationship between liquor sales and this group's distribution of bachelor could 
 help narrow the analysis and clearly saw a trend: as educational attainment rises, alcohol consumption goes from higher to less to near zero.
-
+![higher_bachelor_liquor](images/higher_bachelor_liquor.png)
 
 
 <figure>
