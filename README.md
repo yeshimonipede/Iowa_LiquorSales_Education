@@ -96,7 +96,8 @@ Figure xxxx illustrates the relationship between bachelor's degree rates and liq
 
 Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars.
 
-***Maybe needs some units on the x axis and change title to "Relationship between High School Diploma Rates and Liquor Sales"***![liquor_sales_highschool](images/liquor_sales_highschool.png)
+***Maybe needs some units on the x axis and change title to "Relationship between High School Diploma Rates and Liquor Sales"***
+
 
 Comparing the two graphs, we can analyze the characteristics of high school graduation and bachelor's degrees. The distribution of high school graduation percentages is skewed to the left, indicating that most people in all counties in Iowa have a graduation rate of over 90-95%. This is reflected in the clustering of data points around the 0.90-0.95 range. On the other hand, the distribution of bachelor's degrees is skewed to the right, suggesting that most people in these counties do not have bachelor's degrees. The number of data points sharply decreases when the bachelor's degree rate exceeds 0.3, while at the same time, there is an increase in the cumulative liquor sales.
 
