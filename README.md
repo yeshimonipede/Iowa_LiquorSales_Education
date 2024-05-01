@@ -178,6 +178,7 @@ To achieve this, a KNN (K-Nearest Neighbors) analysis was utilized. KNN can clas
 ![johnson_county_liquor](images/johnson_county_liquor.png)
 
 Selecting the county johnson as one instance of KNN analysis. Johnson has the highest bachelor degree ratio among all counties(0.543), and by inducing the gin subcategories and their retail prices, we expect to see some intercations of how the higher bachelor degree relating to different gin categories. Will people choose to buy more expensive gin when the bachelor degree ratio is higher than 0.2? From the plot, we could locate rough patterns that people may tend to buy higher standards of gin, and as retail prices increase, the gin consumptions increase. However, this increasing trend doesn't mean that people consumes a lot on liquor.
+![benton_county_liquor](images/benton_county_liquor.png)
 
 # Conclusion
 
