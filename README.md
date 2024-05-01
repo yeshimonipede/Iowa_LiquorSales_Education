@@ -99,6 +99,14 @@ As high school degrees increase horizontally, the accumulative liquor sales incr
 
 By looking at these two graphs, the features of high school graduation and bachelor degrees could be compared. The distribution of high school graduation precent is skewed to the left, and most of people in all counties in Iowa has over 0.90-0.95 high school graduation or higher, so the data points clustered around 0.90 -0.95. The distribution of bachelor degree is skewed to the right, which means most of the people in all counties in Iowa only don't have a bachelor degrees.The number of data points rocketly decrease when the bachelor degree is higher than 0.3, at the same time, the accumulative of liquor sales increase some point. 
 
+Regressing the high school graduation and bachelor degree statistical data help to find the relationship between liquor consumption and counties differentiated by level of education, then if define specific threshold of educatioan level(like lower high school graduation ratio and higher bachelor degree ratio within one county), is this more helpful for policy makers to design tactics to solve the liquor consumption issue? By doing the welch two sample t test on defining proportion with high or low level of education, it's more useful to analyze the average educational level of one specific county and look for its liquor sales number. 
+
+By setting the higher highschool graduation of 0.9, the two-sample t test process seperate counties on higher highschool graduation with 0.9 or higher, and lower highschool graduation with 0.9 or lower. The seperation of these two groups of data create the basis of two sample t-test, and the p-value is smaller than the chosen significance level , we reject the null hypothesis that there is a significant difference in the proportion with high school graduation between the two groups.
+![two_sample_highschool](images/two_sample_highschool.png)
+The similar process also went through of seperating counties on higher bachelor degrees and lower bachelor degrees. The threshold is 0.2, and 
+![two_sample_bachelor](images/two_sample_bachelor.png)
+
+
 
 <figure>
 <img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/b471f90f-04e1-4405-9825-05fd6527b985">
