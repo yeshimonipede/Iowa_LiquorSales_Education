@@ -1,32 +1,10 @@
-# Iowa_LiquorSales_Education
+# Final Report
 
 *Research Question: Our research question is: Are there any notable patterns in liquor sales based on educational attainment levels within Iowa communities? By addressing this question, we hope to answer if areas with higher levels of education exhibit different purchasing behaviors compared to areas with lower educational attainment*
 
-*Decision Maker and decision to be made: Our decision maker will be the Director of a Public Health Department. They will be tasked with allocating resources for alcohol awareness campaigns aimed at reducing excessive alcohol consumption and related harms within Iowa communities. The goal is to target resources effectively to areas where alcohol consumption patterns suggest a need for intervention.*
-
-*By analyzing liquor sales data, the Director can gain insights into consumption patterns across different communities. While the dataset may not directly provide information on educational attainment levels, it can still offer valuable insights into consumption trends that may correlate with socio-economic factors such as in our case, education attainment levels.*
-
-*For example, if the analysis reveals that certain communities have significantly higher per capita liquor sales compared to others, indicating potentially higher levels of alcohol consumption, the Director may prioritize allocating resources for alcohol awareness campaigns in those areas. This targeted approach can help address the specific needs of communities with higher rates of alcohol-related issues, such as alcohol-related accidents, health problems, and social consequences.*
-
-*By leveraging liquor sales data to inform resource allocation decisions, the Director can implement more effective alcohol awareness campaigns tailored to the needs of different communities.*
-
-*Data Source: We will use a combination of the data on sales of liquors in Iowa (from class) with Iowa's demographic and economic data available through American Community Survey. The ACS has data regarding the percent of the population (per county) that has a high school degree or higher as well as the percent of the population (for each county) that have a bachelors degree or higher. The segmentation of the ACS dataset based on different educational attainment levels will allow for us to segment and compare liquor sale patterns across counties with varying levels of educational attainment. The liquor sales dataset will provide us with geographical and temporal information which will allow us to consider liquor sales across individual counties within Iowa on a temporal scales as it has liquor sales over time. The dataset will also allow us to look at liquor sales in three different ways: revenue in dollars, volume, and bottles which will be helpful to assess liquor sales in three different ways.*
-
-*Tools and Methods used to Perform the Analysis: We will definitely use RStudio to perform data manipulation and data analysis. We will likely use Tableau to construct informative graphics and visualizations about liqour sales in different geographical regions. We will use descritpive summary statistics to summarize key variables, including liquor sales volume, revenue, and demographic characteristics. We will use correlation analysis to examine the relationship between educational attainment levels (high school degree or higher, bachelor's degree or higher) and liquor sales patterns. We also may run a regression analysis to model the relationship between educational attainment levels and liquor sales while controlling for potential confounding variables (e.g., demographic factors, economic indicators). Finally, we could consider using forecasting methods to predict where liquor sales may be increasing more drastically. Forecasting could potentially help the Public Health Department target which areas to allocate resources to most immediately.*
-
-*We will use a variety of methods to investigate the relationship, if any, between liquor sales and education attainment levels in the state of Iowa on a county level basis. Graphics will help highlight how liquor sales and educational attainment levels differ from county to county. This will be valuable information to the director to be immediately and easily aware about the counties that are purchasing the most liquor as well as the distribution of education attainment levels around the state. A regression analysis will help highlighti if there is a statistically significant relationship between education attainment levels and alcohol consuption levels as well as liquor sales and times. This will help the director determine if it is of worth to target certain areas based on their educational attainment when allocating advertisement resources. K-means clustering will also help hypothesis testing by investigating if there are statistically significant differences between counties in liquor sales. Finally, forecasting analyses will use gin sales in the last few years to help determine which counties are forecasted to have the largest increase in liquor sales over the next eight quarters. This information will be valuable to the director as they can target these specific counties for prioritized resource allocation.*
-
-*-to assess if there is a statistically significant relationship between education attainment levels and liquor sales -to find out the correlation between educational attainment levels and income within different counties*
-
-*Conclusion (still need to consider all results) - an informed and well supported assessment about whether or not there is correlation between liquor sales and education attainment levels in Iowa and if so which areas should be prioritized for a targeted advertisement campaign intended to reduce alcohol-related issues in the state of Iowa. Forecasting techniques will also provide a suggestion for which counties should be identified and monitored as "on the rise" counties in terms of predicted future liquor sales.*
-
-*From the regression of liquor sales on the categorical and numerical variables, it's not hard to find that some major subcategories and type of item shows siginicant difference. There are three major categories of gins and during the process of classificating the correlation, the subcategories of liquor show different impacts among counties. That is a entry point for advertisement campaign; they would know which type of liquor, which brand of liquor to control.*
-
-# Final Report
-
 # Introduction
 
-This project aims to aid the Director of the Iowa Public Health Department of Iowa in their public health advertisement campaign aimed at reducing excessive alcohol consumption. Our analyses will be helpful in better understanding ***if there is any underlying relationship between education attainment levels (high school degree and bachelor degree) and liquor sales in the state of Iowa***. If analyses supports that there is a significant relationship between education attainment levels and liquor sales, this information can be used to help decide which counties need targeted campaigns and resource allocation most immediately based on region-level education attainment level data. We will also investigate how and if other factors impact liquor sale trends (i.e. time, socioeconomic factors, demographic factors) and offer this information to the Director of Public Health so that they are aware of other relevant factors linked to liquor sales in the state of Iowa. This information will be valuable to the Director of the Public Health Department as they attempt to target specific regions that may be in need targeted campaigns and resource allocation with the hopes of combating excessive alcohol consumption. Targeted anti-excessive drinking campaigns and resource allocations in "at-risk" regions could improve the health and safety of Iowa residents.
+This project aims to aid the Director of the Iowa Public Health Department of Iowa in their public health advertisement campaign aimed at reducing excessive alcohol consumption. Our analyses will be helpful in better understanding ***ifsthere is any underlying relationship between education attainment levels (high school degree and bachelor degree) and liquor sales in the state of Iowa***? If analyses supports that there is a significant relationship between education attainment levels and liquor sales, this information can be used to help decide which counties need targeted campaigns and resource allocation most immediately based on region-level education attainment level data. We will also investigate how and if other factors impact liquor sale trends (i.e. time, socioeconomic factors, demographic factors) and offer this information to the Director of Public Health so that they are aware of other relevant factors linked to liquor sales in the state of Iowa. This information will be valuable to the Director of the Public Health Department as they attempt to target specific regions that may be in need targeted campaigns and resource allocation with the hopes of combating excessive alcohol consumption. Targeted anti-excessive drinking campaigns and resource allocations in "at-risk" regions could improve the health and safety of Iowa residents.
 
 # Data Summary
 
@@ -97,9 +75,7 @@ A linear regression analysis revealed that there is a significant relationship b
 
 ### Linear Regression Model examining the relationship between time and gin sales (in dollars)
 
-```         
-![Linear Regression (Sales in Dollars)](images/linear_regression_sales_dollars.png)
-```
+![](images/linear_regression_sales_dollars-01.png)
 
 ### Linear Regression Model examining the relationship between time and gin sales (in volume)
 
@@ -119,11 +95,9 @@ By examining county-level data including liquor sales dollars, high school gradu
 
 The figure xxx illustrates the relationship between bachelor's degree rates and liquor sales. As bachelor's degrees increase horizontally, the plot shows that liquor sales increase as well. This indicates a positive correlation between the percentage of people with bachelor's degrees in a county and the total liquor sales.
 
-
 ![liquor_sales_bachelor](images/liquor_sales_bachelor_degree.png)
 
-Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars. 
-![liquor_sales_highschool](images/liquor_sales_highschool.png) 
+Figure xxx visualizes the relationship between high school degree attainment rates and liquor sales across Iowa. There is again a strong positive visual relationship present. As the attainment of high school graduation rates increases, so does the total liquor sales in dollars. ![liquor_sales_highschool](images/liquor_sales_highschool.png)
 
 Comparing the two graphs, we can analyze the characteristics of high school graduation and bachelor's degrees. The distribution of high school graduation percentages is skewed to the left, indicating that most people in all counties in Iowa have a graduation rate of over 90-95%. This is reflected in the clustering of data points around the 0.90-0.95 range. On the other hand, the distribution of bachelor's degrees is skewed to the right, suggesting that most people in these counties do not have bachelor's degrees. The number of data points sharply decreases when the bachelor's degree rate exceeds 0.3, while at the same time, there is an increase in the cumulative liquor sales.
 
@@ -139,35 +113,27 @@ By setting a threshold of 0.9 for high school graduation rates, counties are sep
 
 Plotting the relationship between liquor sales and the distribution of bachelor's degrees among these 51 counties can help narrow the analysis. The plot reveals a clear trend: as educational attainment rises, alcohol consumption decreases, eventually approaching zero. This suggests that counties with higher levels of education tend to have lower liquor sales. This is valuable information for the Director of Public Health as it means they should consider targeting counties with lower bachelor degree attainment rates since there is a trend present in the data.
 
-To make a more complete analyis, the plot of lower high school graduation ratio and liquor consumption could be compared as an opposite. There are only 19 counties that have the high school gradution lower than 0.9, and the liquor sales are relatively higher when high school gradution ratio is extremely low(0.8) and relatively average(0.9). From the previous distribution plot of high school, as the ratio increases, liquor sales increase either: it would be effective to surmise that the educational attainment is an essential estimator of liquor sales, but after setting the threshold and dividing counties into groups to explore liquor sales on higher/lower bachelor degree, higher/lower high school degree, the focus shift to find the liquor purchasing pattern on higher bachelor degree and lower high school degree including liquor retail price, subcategory. ![lower_highschool_liquor](images/lower_highschool_liquor.png)
-
-To provide a more comprehensive analysis, we can compare the relationship between lower high school graduation rates and liquor consumption as an opposite scenario. Only 19 counties have high school graduation rates lower than 0.9. It is important to note the two points on the left that demonstnrate the highest liquor sales. These two counties demonstrate the highest liquor sales of the 19 "lower high school graduation rate" group. While only a small sliver of data is displayed in this plot, it suggests that generally, liquor sales are lower in counties that exhibit higher high school graduation percentages, even in this plot of the 19 counties with the lowest high school graduation rate. This suggests that educational attainment is an essential estimator of liquor sales and that the Director of Public Health should consider county by county education level attainment rates when planning efforts to reduce alcohol consumption.
+To provide a more comprehensive analysis, we can compare the relationship between lower high school graduation rates and liquor consumption as an opposite scenario. Only 19 counties have high school graduation rates lower than 0.9. It is important to note the two points on the left that demonstrate the highest liquor sales. These two counties demonstrate the highest liquor sales of the 19 "lower high school graduation rate" group. While only a small sliver of data is displayed in this plot, it suggests that generally, liquor sales are lower in counties that exhibit higher high school graduation percentages, even in this plot of the 19 counties with the lowest high school graduation rate. This suggests that educational attainment is an essential estimator of liquor sales and that the Director of Public Health should consider county by county education level attainment rates when planning efforts to reduce alcohol consumption.![lower_highschool_liquor](images/lower_highschool_liquor.png)
 
 ***I am not sure if we need this plot since we haveh a similar one elsewhere.***
 
 <figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/b471f90f-04e1-4405-9825-05fd6527b985"/></figure>
 
-<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/77a85bf9-ba5f-46c1-8f73-c74d5d0ac9b3">
-</figure>
+<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/77a85bf9-ba5f-46c1-8f73-c74d5d0ac9b3"/></figure>
 
 The plot above displays the total volume of liquor sold within each county where the volume exceeds 1,000,000 units. This figure is useful for identifying counties that generated significant revenue from liquor production. By knowing which counties have significant liquor sales volumes, the Director can target interventions more effectively. They can allocate resources for public health programs or policies tailored to areas where alcohol consumption is highest. Notably, the counties with the largest total volume of liquor sales are Polk, Scott, Linn, and Johnson.
-
-
-
 
 Similar to the chart above we also see a downward trend on the sale price in dollar from 2016-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
 
 <figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/db73c4a1-8aa4-4beb-a4b6-2c2c4b16ffbc"/></figure>
 
-<figure><img  src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/00e057d5-800c-498d-9822-6545ba480fbd">
-</figure>
+<figure><img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/00e057d5-800c-498d-9822-6545ba480fbd"/></figure>
 
 Based on the correlation analysis, we found that the percentage of individuals with at least a bachelor's degree had a strong relationship with the percentage of high school graduates or higher, with a correlation coefficient of 0.56. This suggests that counties with higher levels of bachelor's degree attainment tend to also have higher levels of high school graduation.
 
 Additionally, the sale of liquor, retail price, sales for bottles, and sales volume were highly correlated with each other. The retail price and volume had a correlation coefficient of 0.4. This indicates that changes in retail price and volume tend to move together, suggesting a relationship between the price at which liquor is sold and the quantity sold. This is evidence for the decision maker that though a lot of our analyses consider sales in dollars, the trends that we are identifying are still relevant to liquor consumption and not just liquor sales in dollars.
 
-Tableau link: https://public.tableau.com/app/profile/mingdong.yang/viz/Liquorsalesandeducationanalysis/Dashboard1?publish=yes
-Maybe crop?
+Tableau link: <https://public.tableau.com/app/profile/mingdong.yang/viz/Liquorsalesandeducationanalysis/Dashboard1?publish=yes> Maybe crop?
 
 ## Other Exploratory Analyses
 
@@ -199,12 +165,11 @@ To achieve this, a KNN (K-Nearest Neighbors) analysis was utilized. KNN can clas
 
 ![johnson_county_liquor](images/johnson_county_liquor.png)
 
-Selecting the county johnson as one instance of KNN analysis. Johnson has the highest bachelor degree ratio among all counties(0.543), and by inducing the gin subcategories and their retail prices, we expect to see some intercations of how the higher bachelor degree relating to different gin categories. Will people choose to buy more expensive gin when the bachelor degree ratio is higher than 0.2? From the plot, we could locate rough patterns that people may tend to buy higher standards of gin, and as retail prices increase, the gin consumptions increase. However, this increasing trend doesn't mean that people consumes a lot on liquor. 
-![benton_county_liquor](images/benton_county_liquor.png)
+Selecting the county johnson as one instance of KNN analysis. Johnson has the highest bachelor degree ratio among all counties(0.543), and by inducing the gin subcategories and their retail prices, we expect to see some intercations of how the higher bachelor degree relating to different gin categories. Will people choose to buy more expensive gin when the bachelor degree ratio is higher than 0.2? From the plot, we could locate rough patterns that people may tend to buy higher standards of gin, and as retail prices increase, the gin consumptions increase. However, this increasing trend doesn't mean that people consumes a lot on liquor. ![benton_county_liquor](images/benton_county_liquor.png)
 
 If we change another county as a target to find liquor sales on retail price and gin subcategory, similar patterns were showed but it's a little bit difficult to conclude that this pattern is applicable for other counties either. The subcategory of "American dry gins" clustered and liquor sales are high for this cluster, and when the retail price increases, the points that represent clusters become blurred and liquor sales increase in a slow trend. Since we did not explore models of more counties with lower high school graduation rates/ higher high school graduation rates, the overall relationship between the liquor consumption and retail prices when educational attainment level changes could be estimated on the current analysis. In the previous seasonal naive model, the counties that were predicted to have the largest increase in gin sales in the next two years also belong to the group with " higher bachelor degree" and "higher high school gradution degree rates", which may indicate they tend to buy gins with higher unit price and keep consuming. For decision makers, they not only focus on "high risk" counties but also "potential risks" counties like "Woodbury", "Clay" or "Benton".
 
-## Advantages and Challenges of Data Analysis in RStudio and Tableau 
+## Advantages and Challenges of Data Analysis in RStudio and Tableau
 
 **Advantages**
 
@@ -216,14 +181,13 @@ Getting used to version control in RStudio was a bit difficult for a group of be
 
 # Conclusion
 
-### Summary of analytic methodology 
+### Summary of analytic methodology
 
 Linear regression analyses between gin sales (in both bottles and sales) from 2016-2017
 
 Linear regression analyses between gin sales on bachelor degree and high school graduation ratio
 
-two-sample t test between higher/lower educational attainment level 
-
+two-sample t test between higher/lower educational attainment level
 
 ### Consulting the initial research questions
 
@@ -233,8 +197,9 @@ A major limitation that we ran into as we were attempting the forecasting analys
 
 When we explore the liquor sales in dollars and in volume on educational attainment level, it's been a challenge to come with a proper method to analyze on how each variables connect to each other, and how to find the commonality for all counties' educatioanl attainment and provide our policy recommendation on liquor consumption. The percentage of educational attainment is considered differently for each county, so manually defining high or low educational attainment may affect our judgment of the final results because there are no other relevant factors to rule out covariance.
 
-There is another problem of combine different analysis. We focus on the research question from the start, but after going through the process of data analysis, the datasets and plots become complete but difficult to integrate as a whole for us to provide a specific policy recommendation to policy makers. We may provide a general one then integrating with reality situation. 
-### Future Work
+There is another problem of combine different analysis. We focus on the research question from the start, but after going through the process of data analysis, the datasets and plots become complete but difficult to integrate as a whole for us to provide a specific policy recommendation to policy makers. We may provide a general one then integrating with reality situation.
+
+\### Future Work
 
 In the future, it would be nice to expand this project to include city-related data as well. At this time the Director of Public Health is most concerned with county level data but it would be interesting to consult city level data and see how our analyses and conclusions differ.
 
