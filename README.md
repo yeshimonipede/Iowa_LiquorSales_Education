@@ -97,7 +97,7 @@ After doing the ggplot of seperately, the regression trend showed results more c
 As high school degrees increase horizontally, the accumulative liquor sales increase either.
 ![liquor_sales_highschool](images/liquor_sales_highschool.png)
 
-By looking at these two graphs, the comparison between the feature i
+By looking at these two graphs, the features of high school graduation and bachelor degrees could be compared. The distribution of high school graduation precent is skewed to the left, and most of people in all counties in Iowa has over 0.90-0.95 high school graduation or higher, so the data points clustered around 0.90 -0.95. The distribution of bachelor degree is skewed to the right, which means most of the people in all counties in Iowa only don't have a bachelor degrees.The number of data points rocketly decrease when the bachelor degree is higher than 0.3, at the same time, the accumulative of liquor sales increase some point. 
   
 ## Other Exploratory Analyses
 
