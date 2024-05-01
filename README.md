@@ -99,12 +99,36 @@ As high school degrees increase horizontally, the accumulative liquor sales incr
 
 By looking at these two graphs, the features of high school graduation and bachelor degrees could be compared. The distribution of high school graduation precent is skewed to the left, and most of people in all counties in Iowa has over 0.90-0.95 high school graduation or higher, so the data points clustered around 0.90 -0.95. The distribution of bachelor degree is skewed to the right, which means most of the people in all counties in Iowa only don't have a bachelor degrees.The number of data points rocketly decrease when the bachelor degree is higher than 0.3, at the same time, the accumulative of liquor sales increase some point. 
 
-![multiple time series plot on liquor sales](images/Multiple_Time_Series_Plot_on_Liquor_Sales.png)
+
 <figure>
 <img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/b471f90f-04e1-4405-9825-05fd6527b985">
 </figure>
 
 Here we can clearly see a decrease in the retail price, sales for bottles and the volume sold from 2016-01-04 to 2017-12-28
+
+<figure>
+<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/bf3e6363-6dee-4a62-a279-82a357706c9c">
+</figure>
+
+Based on the above plot we see the total volume of liquor within each county where the volume of liquor sold is above 1000000, the figure is helpful in identifying the counties that generated revenue from liquor production. Next we proceeded to visualizing the bar chart of the total sales in dollars for each item which is as presented
+
+<figure>
+<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/47b0e7d8-d985-45f9-9865-cbcffc12d85a">
+</figure>
+
+Its evident that Tanqueray gin had the highest total sales which seems to be the most profitable item sold, we proceeded to identifying the trend nature of the retail price, sales for bottles and the volume sold which is presented as follows
+
+<figure>
+<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/f9148aa2-2479-4a17-b2ca-4c158b3cbd8e">
+</figure>
+
+Similar to the chart above we also see a downward trend on the sale price in dollar from 20116-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
+
+<figure>
+<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/f776fe3e-ce12-4026-9d84-c4c5718ae899">
+</figure>
+
+Here based on the correlation analysis we see that the bachelors degree or higher score only had a strong relationship with high school graduater or higher score with a correlation coefficient of 0.56. Whereas sale of liquor, retail price, sale bottles, sales volume where highly correlated to each other with the retail price and volume recording a correlation coefficient of 0.4.
   
 ## Other Exploratory Analyses
 
