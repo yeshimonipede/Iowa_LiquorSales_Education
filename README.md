@@ -119,7 +119,6 @@ By examining county-level data including liquor sales dollars, high school gradu
 
 The figure xxx illustrates the relationship between bachelor's degree rates and liquor sales. As bachelor's degrees increase horizontally, the plot shows that liquor sales increase as well. This indicates a positive correlation between the percentage of people with bachelor's degrees in a county and the total liquor sales.
 
-***should title be "Relationship between Bachelor's Degree Rates and Liquor Sales"***
 
 ![liquor_sales_bachelor](images/liquor_sales_bachelor_degree.png)
 
