@@ -107,7 +107,9 @@ By setting the higher highschool graduation of 0.9, the two-sample t test proces
 The similar process also went through of seperating counties on higher bachelor degrees and lower bachelor degrees. The threshold is 0.2, and based onthe p-value(still smaller than the chosen significance level), there is a significant difference in the proportion with bachelor degree between higher bachelor degree groups and lower bachelor group. Counting the number of counties with higher bachelor degree(>0.2), there are only 51 counties. The plot of the relationship between liquor sales and this group's distribution of bachelor could 
 help narrow the analysis and clearly saw a trend: as educational attainment rises, alcohol consumption goes from higher to less to near zero.
 ![higher_bachelor_liquor](images/higher_bachelor_liquor.png)
-
+To make a more complete analyis, the plot of lower high school graduation ratio and liquor consumption could be compared as an opposite.
+There are only 19 counties that have the high school gradution lower than 0.9, and the liquor sales are relatively higher when high school gradution ratio is extremely low(0.8) and relatively average(0.9). From the previous distribution plot of high school, as the ratio increases, liquor sales increase either: it would be effective to surmise that the educational attainment is an essential estimator of liquor sales, but after setting the threshold and dividing counties into groups to explore liquor sales on higher/lower bachelor degree, higher/lower high school degree, the focus shift to find the liquor purchasing pattern on higher bachelor degree and lower high school degree including liquor retail price, subcategory.
+![lower_highschool_liquor](images/lower_highschool_liquor.png)
 
 <figure>
 <img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/b471f90f-04e1-4405-9825-05fd6527b985">
