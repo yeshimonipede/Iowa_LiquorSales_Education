@@ -24,9 +24,68 @@ library(tidyr)
 library(dplyr)
 library(cowplot)
 library(stats)
+library(xtable)
+library(knitr)
+
 
 
 ```
+Introductory Data Summary
+```{r}
+# Calculate summary statistics for each county
+education_stats <- merged_data %>%
+  group_by(county) %>%
+  summarise(
+    high_school_degree_rate = mean(High.school.graduate.or.higher),
+    bachelors_degree_rate = mean(Bachelor.s.degree.or.higher)
+  )
+
+print(education_stats)
+
+# Top 10 counties with lowest high school graduates or higher
+lowest_high_school <- head(education_stats[order(education_stats$high_school_degree_rate),], 10)
+
+# Top 10 counties with lowest bachelor's degree or higher
+lowest_bachelors_degree <- head(education_stats[order(education_stats$bachelors_degree_rate),], 10)
+
+print(lowest_high_school)
+print(lowest_bachelors_degree)
+
+
+```
+
+```{r}
+
+
+# Boxplot for high school degree rate and bachelor's degree rate
+boxplot_data <- data.frame(
+  category = rep(c("High School Degree", "Bachelor's Degree"), each = nrow(education_stats)),
+  rate = c(education_stats$high_school_degree_rate, education_stats$bachelors_degree_rate)
+)
+
+# Create the boxplot
+boxplot <- ggplot(boxplot_data, aes(x = category, y = rate, fill = category)) +
+  geom_boxplot() +
+  labs(title = "Distribution of Educational Attainment Rates in Iowa",
+       x = "Education Level",
+       y = "Attainment Rate",
+       fill = "Education Level") +
+  theme_minimal()
+
+print(boxplot)
+
+# Summary statistics for high school degree rate
+summary_high_school <- summary(education_stats$high_school_degree_rate)
+
+# Summary statistics for bachelor's degree rate
+summary_bachelors <- summary(education_stats$bachelors_degree_rate)
+
+
+```
+
+
+
+
 Creating an aggregated table and plotting 
 ```{r}
 # Convert the date column to Date format 
