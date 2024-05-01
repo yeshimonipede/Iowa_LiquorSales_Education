@@ -130,10 +130,10 @@ Its evident that Tanqueray gin had the highest total sales which seems to be the
 <img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/f9148aa2-2479-4a17-b2ca-4c158b3cbd8e">
 </figure>
 
-Similar to the chart above we also see a downward trend on the sale price in dollar from 20116-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
+Similar to the chart above we also see a downward trend on the sale price in dollar from 2016-01-04 to 2017-12-28 implying that the profits from liquor deminished over time. Here we inspected if the data contained any missing values where high school graduate or higher had a 0.5052536% missing value together with the bachelors degree or higher this could be that the respondent wanted to be anonymous or they had not qualified for either which was render as insignificant for this study and was purposed to be removed.
 
 <figure>
-<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/f776fe3e-ce12-4026-9d84-c4c5718ae899">
+<img src="https://github.com/yeshimonipede/Iowa_LiquorSales_Education/assets/166679286/db73c4a1-8aa4-4beb-a4b6-2c2c4b16ffbc">
 </figure>
 
 Here based on the correlation analysis we see that the bachelors degree or higher score only had a strong relationship with high school graduater or higher score with a correlation coefficient of 0.56. Whereas sale of liquor, retail price, sale bottles, sales volume where highly correlated to each other with the retail price and volume recording a correlation coefficient of 0.4.
