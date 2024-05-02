@@ -1,7 +1,5 @@
 # Final Report
 
-*Research Question: Our research question is: Are there any notable patterns in liquor sales based on educational attainment levels within Iowa communities? By addressing this question, we hope to answer if areas with higher levels of education exhibit different purchasing behaviors compared to areas with lower educational attainment*
-
 # Introduction
 
 This project aims to aid the Director of the Iowa Public Health Department of Iowa in their public health advertisement campaign aimed at reducing excessive alcohol consumption. Our analyses will be helpful in better understanding ***if there is any underlying relationship between education attainment levels (high school degree and bachelor degree) and liquor sales in the state of Iowa***. If analyses supports that there is a significant relationship between education attainment levels and liquor sales, this information can be used to help decide which counties need targeted campaigns and resource allocation most immediately based on region-level education attainment level data. We will also investigate how and if other factors impact liquor sale trends (i.e. time, socioeconomic factors, demographic factors) and offer this information to the Director of Public Health so that they are aware of other relevant factors linked to liquor sales in the state of Iowa. This information will be valuable to the Director of the Public Health Department as they attempt to target specific regions that may be in need targeted campaigns and resource allocation with the hopes of combating excessive alcohol consumption. Targeted anti-excessive drinking campaigns and resource allocations in "at-risk" regions could improve the health and safety of Iowa residents.
@@ -14,7 +12,7 @@ The first data source analyzed ([Iowa_AllLiquorSales_Education.csv](https://gith
 
 The second data source analyzed ([Gin_LiquorSales_Education.csv](https://github.com/yeshimonipede/Iowa_LiquorSales_Education/blob/main/data/Gin_LiquorSales_Education.csv "Gin_LiquorSales_Education.csv")) is a merged data source of gin sales in Iowa in the years 2016 and 2017. This data source has region by region gin sales information in the form of sales in dollars, sales in volume, and sales in volume. Access to multiple metrics of sales allows us to support any trends that we see with multiple forms of sales. Considering liquor sales in volume ensures that our analyses are considering the amount of liquor purchased rather than just the total amount of money spent purchasing liquor sales which is our focus since our intended audience is concerned with alcohol consumption rather than solely the amount of money spent on liquor. Another asset of this dataset is that it can be broken down temporally. There is information related to liquor sales broken down into months, which allows us to consider how liquor sales have progressed over time and identify and time-related trends.
 
-Based on the second data source we used, it would be more helpful to extract part of columns in the data to do the analysis, so by extracting columns of liquor sales, county and educational attainment level related (high school graduation and bachelor degree rates) to find more detailed relationship between the gin liquor sales and educated levels for different counties.
+All sub datasets were extracted from the second data source mentioned above.
 
 ## Brief Data Summary
 
@@ -51,6 +49,8 @@ These are the 10 counties with the **highest** Bachelor's Degree attainment rate
 | Dubuque   | 0.314                             |
 
 Figure 1 demonstrates the distribution of the education attainment levels across counties in the state of Iowa.![Figure 1](images/education_boxplot-01.png)
+
+Figure 1
 
 |                    | Minimum |   Q1   | Median |  Mean  |   Q3   |  Max   |  IQR   |
 |--------------------|:-------:|:------:|:------:|:------:|:------:|:------:|:------:|
@@ -302,3 +302,5 @@ Another variable that we want to factor into our recommendation is time. As back
 The first order effects of implementing our recommendation in Story as well as the other regions as well as reflecting on and continuing efforts made between 2016 and 2017 include increased awareness about the risks associated with excessive alcohol consumption in this county, resource allocation in hopes of maximizing the impact of public health efforts, and targeted campaigns that may result in stricter regulations related to liquor sales and marketing.
 
 The second order effects we hope this plan achieves is improved general public health as people purchase and indulge in smaller quantities of liquor. This will hopefully reduce the number of injuries and deaths related to over indulgence in alcohol. Another possible second order effects is possible social well-being including lower rates of crime and violence that occur due to excessive drinking.
+
+The risks associated with this recommendation include that education attainment levels are only one of many, many socioeconomic factors that likely influence the data. Relying on this recommendation alone runs the risk of failing to consider other factors that are potentially correlated even more strongly than education attainment levels. Our recommendation also requires a variety of resources and money in order to implement. Finally, a risk of our recommendation is resistance from liquor retailers and manufacturers who may oppose stricter regulation and an anti-alcohol agenda.
