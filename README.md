@@ -14,6 +14,8 @@ The first data source analyzed is a merged data source of liquor sales in variou
 
 The second data source analyzed ([Gin_LiquorSales_Education.csv](https://github.com/yeshimonipede/Iowa_LiquorSales_Education/blob/main/data/Gin_LiquorSales_Education.csv "Gin_LiquorSales_Education.csv")) is a merged data source of gin sales in Iowa in the years 2016 and 2017. This data source has region by region gin sales information in the form of sales in dollars, sales in volume, and sales in volume. Access to multiple metrics of sales allows us to support any trends that we see with multiple forms of sales. Considering liquor sales in volume ensures that our analyses are considering the amount of liquor purchased rather than just the total amount of money spent purchasing liquor sales which is our focus since our intended audience is concerned with alcohol consumption rather than solely the amount of money spent on liquor. Another asset of this dataset is that it can be broken down temporally. There is information related to liquor sales broken down into months, which allows us to consider how liquor sales have progressed over time and identify and time-related trends.
 
+Based on the second data source we used, it would be more helpful to extract part of columns in the data to do the analysis, so by extracting columns of liquor sales, county and edcuational attainment level related (high school graduation and bachelor dergee rates) to find more detailed relationship between the gin liquor sales and educated levels for different counties.
+
 ## Brief Data Summary
 
 Education attainment levels are the main variable that we are analyzing in relation to liquor sales in the state of Iowa.
