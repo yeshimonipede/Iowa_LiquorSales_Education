@@ -48,10 +48,9 @@ These are the 10 counties with the **lowest** Bachelor's Degree attainment rates
 | Wright     | 0.163                             |
 | Van Buren  | 0.164                             |
 
-Figure xxx demonstrates the distribution of the education attainment levels across counties in the state of Iowa.
+Figure xxx demonstrates the distribution of the education attainment levels across counties in the state of Iowa.![](images/education_boxplot-01.png)
 
 ```         
-![Education Boxplot](data/education_boxplot.png)
 ```
 
 Figure xx
@@ -65,7 +64,7 @@ Figure xx provides a basic statistical summary of education attainment level acr
 
 From this summary, we can conclude that, on average, counties in Iowa have higher rates of high school graduates compared to residents with bachelor's degrees.
 
-The small IQRs for both education attainment levels suggests that the middle 50% of counties have similar education attainment levels. However, the max value for the Bachelor's Degree data suggests that there may be some counties that have notably higher bachelor's degree attainment levels.
+The small IQRs for both education attainment levels suggests that the middle 50% of counties have similar education attainment levels. However, the max value for the Bachelor's Degree data suggests that there may be some counties that have notably higher bachelor's degree attainment levels. This is supported by figure xx as there are clearly some high outliers in the bachelor's degree box and whisker plot.
 
 # Data Analytics
 
