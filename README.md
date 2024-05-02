@@ -4,7 +4,7 @@
 
 # Introduction
 
-This project aims to aid the Director of the Iowa Public Health Department of Iowa in their public health advertisement campaign aimed at reducing excessive alcohol consumption. Our analyses will be helpful in better understanding ***ifsthere is any underlying relationship between education attainment levels (high school degree and bachelor degree) and liquor sales in the state of Iowa***? If analyses supports that there is a significant relationship between education attainment levels and liquor sales, this information can be used to help decide which counties need targeted campaigns and resource allocation most immediately based on region-level education attainment level data. We will also investigate how and if other factors impact liquor sale trends (i.e. time, socioeconomic factors, demographic factors) and offer this information to the Director of Public Health so that they are aware of other relevant factors linked to liquor sales in the state of Iowa. This information will be valuable to the Director of the Public Health Department as they attempt to target specific regions that may be in need targeted campaigns and resource allocation with the hopes of combating excessive alcohol consumption. Targeted anti-excessive drinking campaigns and resource allocations in "at-risk" regions could improve the health and safety of Iowa residents.
+This project aims to aid the Director of the Iowa Public Health Department of Iowa in their public health advertisement campaign aimed at reducing excessive alcohol consumption. Our analyses will be helpful in better understanding ***if there is any underlying relationship between education attainment levels (high school degree and bachelor degree) and liquor sales in the state of Iowa***. If analyses supports that there is a significant relationship between education attainment levels and liquor sales, this information can be used to help decide which counties need targeted campaigns and resource allocation most immediately based on region-level education attainment level data. We will also investigate how and if other factors impact liquor sale trends (i.e. time, socioeconomic factors, demographic factors) and offer this information to the Director of Public Health so that they are aware of other relevant factors linked to liquor sales in the state of Iowa. This information will be valuable to the Director of the Public Health Department as they attempt to target specific regions that may be in need targeted campaigns and resource allocation with the hopes of combating excessive alcohol consumption. Targeted anti-excessive drinking campaigns and resource allocations in "at-risk" regions could improve the health and safety of Iowa residents.
 
 # Data Summary
 
@@ -136,8 +136,6 @@ Additionally, the sale of liquor, retail price, sales for bottles, and sales vol
 
 Tableau link: <https://public.tableau.com/app/profile/mingdong.yang/viz/Liquorsalesandeducationanalysis/Dashboard1?publish=yes>
 
-Through the Tableau dashboard, Tanqueray Gin has the highest total sale and retail price, as seen by the bar chart of total sale and retail price. The top three in each county's bar chart of total sales are Johnson, Linn, and Scott; this is also the exact same order as in each county's bar chart of educational success. We can conclude that counties with higher overall liquor sales also typically have higher educational achievement. The top counties with bachelor's degrees or above also likely to have high school graduates or above, as seen by the education performance bar chart. This finding is consistent with our correlation research performed in R studio earlier. A positive correlation has also been observed in a time series plot between the number of sales and bachelor's degree holders; that is, the trend of sales volume is increasing as the number of bachelor's degree holders increases.
-
 ## Other Exploratory Analyses
 
 There were a couple of exploratory analyses conducted on the data that we cannot include in our policy recommendation with full confidence but we believe may still be valuable to the policy maker.
@@ -188,13 +186,21 @@ Getting used to version control in RStudio was a bit difficult for a group of be
 
 ### Summary of analytic methodology
 
-Linear regression analyses between gin sales (in both bottles and sales) from 2016-2017
+We conducted the following statistical analyses:
 
-Linear regression analyses between gin sales on bachelor degree and high school graduation ratio
+-   Linear regression analyses between gin sales (in both bottles and sales) from 2016-2017
 
-two-sample t test between higher/lower educational attainment level
+-   Linear regression analyses between gin sales on bachelor degree and high school graduation ratio
 
-### Consulting the initial research questions
+-   Two-sample t-tests to compare educational attainment levels (high school graduation rates and bachelor's degree rates) and their impact on liquor sales.
+
+-   KNN (K-Nearest Neighbors) analysis to examine the relationship between educational attainment and liquor sales.
+
+-   Forecasting analyses using ARIMA and seasonal naive models to estimate future gin liquor sales in the next two years.
+
+These analyses provided support for our conclusion that yes, there is a statistically significant underlying relationship between education attainment levels and liquor sales in Iowa. The linear regression analyses between liquor sales and educational attainment levels revealed positive correlations between liquor sales and both high school graduation rates and bachelor's degree rates. This suggests that counties with higher levels of educational attainment tend to exhibit higher liquor sales.
+
+The linear regression analyses conducted between gin sales and time revealed a significant negative relationship, indicating a decrease in sales from 2016-2017 as a result of time. This suggests that time is a relative factor regarding liquor sales.
 
 ### Limitations
 
@@ -207,5 +213,7 @@ Another challenge for a project like this is seamlessly integerating analyses fr
 ### Future Work
 
 In the future, it would be nice to expand this project to include city-related data as well. At this time the Director of Public Health is most concerned with county level data but it would be interesting to consult city level data and see how our analyses and conclusions differ.
+
+Another interesting expansion would involve considering other socioeconomic factors that differ region to region. By doing so we could investigate if factors like race, income level, employment status, etc. also related to liquor sales. This information would be valuable to the Director of Public Health as they continue to aim to decrease liquor sales with the hopes of combating excessive alcohol consumption in Iowa.
 
 # Policy Recommendation

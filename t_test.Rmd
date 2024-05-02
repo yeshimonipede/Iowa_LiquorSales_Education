@@ -46,7 +46,6 @@ library(tidyverse)
 library(ggplot2)
 library(grid)
 library(forecast)
-library(ggpubr)
 library(car)
 ```
 To assess the relationship between the liquor sales and the education level, prior to organize current variables.
@@ -189,5 +188,24 @@ ggplot(liquor_johnson, aes(retail.price, sale.dollars, color = cluster_id)) +
     geom_point(alpha = 0.25) +
     xlab("retail price") +
     ylab("Price")
+```
+
+```{r}
+# Filter the dataset based on educational level 
+high_bachelor <- liquor_all[liquor_all$Bachelor.s.degree.or.higher > 0.2,]
+low_bachelor <- liquor_all[liquor_all$Bachelor.s.degree.or.higher < 0.2,]
+
+# Perform t-test to test significance of liquor sales between the two groups
+t_test_result_bach <- t.test(high_bachelor$sale.volume, low_bachelor$sale.volume)
+print(t_test_result_bach)
+
+high_hs <- liquor_all[liquor_all$High.school.graduate.or.higher > 0.9,]
+low_hs <- liquor_all[liquor_all$High.school.graduate.or.higher < 0.9,]
+
+t_test_hs <- t.test(high_hs$sale.volume, low_hs$sale.volume)
+
+# Print the results
+print(t_test_hs)
+
 ```
 
