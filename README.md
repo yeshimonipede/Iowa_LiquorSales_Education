@@ -134,6 +134,8 @@ Additionally, the sale of liquor, retail price, sales for bottles, and sales vol
 
 Tableau link: <https://public.tableau.com/app/profile/mingdong.yang/viz/Liquorsalesandeducationanalysis/Dashboard1?publish=yes>
 
+Through the Tableau dashboard, Tanqueray Gin has the highest total sale and retail price, as seen by the bar chart of total sale and retail price. The top three in each county's bar chart of total sales are Johnson, Linn, and Scott; this is also the exact same order as in each county's bar chart of educational success. We can conclude that counties with higher overall liquor sales also typically have higher educational achievement. The top counties with bachelor's degrees or above also likely to have high school graduates or above, as seen by the education performance bar chart. This finding is consistent with our correlation research performed in R studio earlier. A positive correlation has also been observed in a time series plot between the number of sales and bachelor's degree holders; that is, the trend of sales volume is increasing as the number of bachelor's degree holders increases.
+
 ## Other Exploratory Analyses
 
 There were a couple of exploratory analyses conducted on the data that we cannot include in our policy recommendation with full confidence but we believe may still be valuable to the policy maker.
