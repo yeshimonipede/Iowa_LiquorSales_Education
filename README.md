@@ -101,7 +101,7 @@ Similarly, counties with a higher percentage of high school graduates or higher 
 
 Figures 3 and 4 support the findings of the t-test. With regard to both high school diploma and bachelor's degree attainment levels, counties in the "high education attainment" groups were the counties responsible for the higher liquor purchases in volume.
 
-##  T-test analysis of education attainment levels and liquor sales (in dollars)
+## T-test analysis of education attainment levels and liquor sales (in dollars)
 
 ![Figure 6](images/ttest_dollars-01.png){width="1038"}
 
@@ -139,23 +139,23 @@ A linear regression analysis revealed that there is a significant relationship b
 
 ### Linear Regression Model examining the relationship between time and gin sales (in volume)
 
-![Figure 10](images/linear_regression_sales_volume.png){alt="Figure x, Linear Regression (Sales in Volume)"}
+![Figure x, Linear Regression (Sales in Volume)](images/linear_regression_sales_volume.png)
 
 A linear regression analysis revealed that there is a significant relationship between liquor sales in volume and time (Figure 10). The model was able to fit a decreasing straight line between monthly gin sales in Iowa (in volume) across the last two years. The linear model suggests that on average, there is a 61.73 volume unit monthly decrease in gin sales in the state of Iowa. The date coefficient has a p-value of 2.89e-05, which is much less than 0.05, thus signifying a statistically significant relationship between time and gin sales. The R-squared value is 0.556, which suggests that approximately 56% of the variance in total sales (in volume) is explained by time. This suggests that liquor sales (in volume) is moderately dependent on the variable of time.
 
 There are a few assumptions underlying linear regression analysis such as linearity, independence of observations, constant variance and normality of residuals. Many of these assumptions can be assessed with a histogram of the residuals and a Quantile-Quantile plot. The bell shaped histograms of the residuals (Figure 11 and 12) and the Q-Q plot (Figure 13 and 14) both suggest that these models meet these assumptions. The points on the Q-Q plot form a straight, diagonal line as they should. The fulfillment of these assumptions strengthens the reliability of these linear regression models and adds validity to our conclusion that time and liquor sales exhibit a statistically significant relationship.
 
-![Figure 9](images/residual_hist_dollars.png){alt="Residual Histogram Dollars"}
+![Residual Histogram Dollars](images/residual_hist_dollars.png)
 
 Figure 11
 
-![Figure 12](images/residual_hist_vol.png){alt="Residual Histogram Vol"}
+![Residual Histogram Vol](images/residual_hist_vol.png)
 
-![Figure 11](images/Q-Q_plot_linear_reg.png){alt="Q-Q Plot Linear Regression"}
+![Q-Q Plot Linear Regression](images/Q-Q_plot_linear_reg.png)
 
 Figure 13
 
-![Figure 14](images/Q-Qplot_vol.png){alt="Q-Q Plot Vol"}
+![Q-Q Plot Vol](images/Q-Qplot_vol.png)
 
 Both linear regression models suggest that historically liquor sales have decreased as a result of time progressing. This statistical significance of these models suggest that sales measured in both dollars and volume will continue to decrease as time increases. This information may be useful for the policy maker for multiple reasons. This information is valuable as it confirms that historically time does have an impact on liquor sales. The director of public health should be made aware of as many factors as possible that influence liquor sales in order to best make a plan to decrease liquor consumption. Another reason this information is valuable as it suggests that any resource allocation or targeted campaigning that the department of public health has applied from 2016 to 2017 was potentially helpful as gin sales did decrease in this time span. This may encourage the policy maker to continue certain efforts (i.e. continue targeting the specific regions that have been targeted during this time or continue a certain kind of resource allocation) that have already been applied in hopes of continuing to decrease liquor sales in Iowa.
 
@@ -191,7 +191,7 @@ The policy recommendation aims to understand the influence of socioeconomic fact
 
 To achieve this, a KNN (K-Nearest Neighbors) analysis was utilized. KNN can classify data points based on their similarity to neighboring points. However, before applying KNN, methods to determine the optimal number of clusters were employed. These methods include the elbow method, silhouette method, and gap statistic method. Each method helps identify the optimal number of clusters for the dataset. However, due to limitations in the dataset and predictors, there was no consensus on the optimal combination of methods. As a result, the optimal number of clusters was chosen manually as four.
 
-[![Figure 13](images/johnson_county_liquor.png)](Figure 13)
+[![Figure 13](images/johnson_county_liquor.png)](Figure%2013)
 
 Choosing Johnson County as an example for KNN analysis (Figure 13), we find it exhibits the highest bachelor's degree attainment rate among all counties at 0.543. By examining the subcategories of gin and their respective retail prices, we aim to discern any correlations between higher bachelor's degree ratios and preferences for different gin categories. Specifically, we investigate whether individuals are inclined to purchase more expensive gin variants when the bachelor's degree ratio exceeds 0.2.![Figure 14](images/benton_county_liquor.png)
 
